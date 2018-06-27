@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol ConfigureBudgetDelegate
+-(void)sendBudgetBackVC:(UIViewController*)controller passText:(NSString*)budget;
+@end
+
 @interface ConfigureBudgetViewController : UIViewController
+@property (nonatomic,weak)id<ConfigureBudgetDelegate>delegate;
 
 @end
