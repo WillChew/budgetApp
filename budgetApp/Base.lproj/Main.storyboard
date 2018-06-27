@@ -343,6 +343,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Pdi-ua-ME7"/>
                     </view>
+                    <connections>
+                        <outlet property="amountLabel" destination="3lJ-Az-UA0" id="pBe-fd-o0O"/>
+                        <outlet property="amountTextField" destination="Cbr-hO-JGN" id="Uey-dg-Jpu"/>
+                        <outlet property="dateLabel" destination="LCr-wQ-WiR" id="s4E-fE-8dk"/>
+                        <outlet property="dateTextField" destination="lgc-Dj-6at" id="8Gu-6f-6z5"/>
+                        <outlet property="descriptionLabel" destination="Fdw-P3-q95" id="pkz-Ym-BJs"/>
+                        <outlet property="descriptionTextField" destination="smq-4n-JMN" id="w60-gD-PTk"/>
+                        <outlet property="nameLabel" destination="q5I-9F-oY1" id="ubZ-XI-xHW"/>
+                        <outlet property="nameTextField" destination="DLW-y2-s6T" id="r8A-KC-EV7"/>
+                        <outlet property="sectionLabel" destination="uWt-h3-khZ" id="f1p-Af-kRh"/>
+                        <outlet property="sectionTextField" destination="TZo-DU-0TQ" id="q0L-hN-ekK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FY4-Vb-pK1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

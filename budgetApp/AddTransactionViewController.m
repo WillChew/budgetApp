@@ -7,8 +7,20 @@
 //
 
 #import "AddTransactionViewController.h"
+#import "TransactionTableViewCell.h"
 
 @interface AddTransactionViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *nameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *amountTextField;
+@property (weak, nonatomic) IBOutlet UITextField *sectionTextField;
+@property (weak, nonatomic) IBOutlet UITextField *dateTextField;
+@property (weak, nonatomic) IBOutlet UITextField *descriptionTextField;
+
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *amountLabel;
+@property (weak, nonatomic) IBOutlet UILabel *sectionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 
 @end
 
@@ -16,7 +28,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupKeyboards];
     // Do any additional setup after loading the view.
+   
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(viewTapped:)];
+     [self.view addGestureRecognizer:tapGesture];
+}
+
+-(void)viewTapped:(UITapGestureRecognizer*)sender {
+    [self.view resignFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,6 +44,18 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)setupKeyboards {
+    UIDatePicker *datepicker = [[UIDatePicker alloc]init];
+    [datepicker setDate:[NSDate date]];
+ 
+    [datepicker addTarget:self action:@selector(updateTextField:) forControlEvents:UIControlEventValueChanged];
+    [self.dateTextField setInputView:datepicker];
+}
+
+-(void)updateTextField:(id)sender {
+    UIDatePicker *picker = (UIDatePicker*)self.dateTextField.inputView;
+    self.dateTextField.text = [NSString stringWithFormat:@"%@", picker.date];
+}
 /*
 #pragma mark - Navigation
 
