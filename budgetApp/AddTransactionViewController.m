@@ -8,8 +8,9 @@
 
 #import "AddTransactionViewController.h"
 #import "TransactionTableViewCell.h"
+#import "Expense.h"
 
-@interface AddTransactionViewController ()
+@interface AddTransactionViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *amountTextField;
 @property (weak, nonatomic) IBOutlet UITextField *sectionTextField;
@@ -22,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 
+@property (nonatomic) NSDate *date;
 @end
 
 @implementation AddTransactionViewController
@@ -29,6 +31,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupKeyboards];
+    [self textFieldDidEndEditing:self.dateTextField];
     // Do any additional setup after loading the view.
    
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(viewTapped:)];
@@ -36,7 +39,8 @@
 }
 
 -(void)viewTapped:(UITapGestureRecognizer*)sender {
-    [self.view resignFirstResponder];
+    [self.view endEditing:YES];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -50,11 +54,28 @@
  
     [datepicker addTarget:self action:@selector(updateTextField:) forControlEvents:UIControlEventValueChanged];
     [self.dateTextField setInputView:datepicker];
+    
+    self.amountTextField.keyboardType = UIKeyboardTypeNumberPad;
+    
 }
 
 -(void)updateTextField:(id)sender {
     UIDatePicker *picker = (UIDatePicker*)self.dateTextField.inputView;
-    self.dateTextField.text = [NSString stringWithFormat:@"%@", picker.date];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    [dateFormatter setDateFormat:@"dd-MM-yyyy"];
+    [dateFormatter stringFromDate:picker.date];
+    NSString *date = [dateFormatter stringFromDate:picker.date];
+    NSLog(@"%@", date);
+//    NSDate *date2 = [dateFormatter dateFromString:date];
+    self.date = [dateFormatter dateFromString:date];
+    
+
+}
+- (IBAction)submitButtonPressed:(UIButton *)sender {
+    Expense *newExpense = [[Expense alloc]initWithName:self.nameTextField.text amount:self.amountTextField description:self.descriptionTextField.text date:self.date];
+    NSLog(@"date: %@", newExpense.date);
+}
+-(void)textFieldDidEndEditing:(UITextField *)textField {
 }
 /*
 #pragma mark - Navigation
