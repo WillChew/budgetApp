@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Expenses : NSObject
+@interface Expense: NSObject
 
 @property (nonatomic,copy) NSString *name;
 @property (nonatomic)  NSNumber *amount;

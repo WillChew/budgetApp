@@ -7,8 +7,14 @@
 //
 
 #import "TransactionViewController.h"
+#import "Expense.h"
+#import "TransactionTableViewCell.h"
 
-@interface TransactionViewController ()
+@interface TransactionViewController () <UITableViewDataSource, UITableViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UITableView *transactionTableView;
+@property (nonatomic, strong) NSArray<NSArray*> *transactionArray;
+
 
 @end
 
@@ -16,7 +22,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+//    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+//    [dateFormatter setDateFormat:@"dd.mm.YY HH:mm:ss"];
+//    NSString *dateString = [dateFormatter stringFromDate:currentDate];
+    
+    self.transactionArray = @[
+                              @[],
+                              @[],
+                              @[],
+                              @[],
+                              @[],
+                              ];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,5 +49,24 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return self.transactionArray.count;
+}
+
+- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.transactionArray[section].count;
+}
+
+- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    TransactionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TransactionCell" forIndexPath:indexPath];
+    cell.
+    return cell;
+    
+}
+
+
+
+
 
 @end

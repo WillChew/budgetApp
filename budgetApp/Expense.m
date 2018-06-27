@@ -6,9 +6,9 @@
 //  Copyright © 2018 Erik Goossens. All rights reserved.
 //
 
-#import "Expenses.h"
+#import "Expense.h"
 
-@implementation Expenses
+@implementation Expense
 
 - (instancetype)initWithName:(NSString *)name amount:(NSNumber *)amount description:(NSString *)desc date:(NSDate *)date {
     if (self = [super init]) {
