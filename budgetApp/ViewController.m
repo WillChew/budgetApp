@@ -33,6 +33,13 @@
     }
 }
 -(void)sendBudgetBackVC:(UIViewController *)controller passText:(NSString *)budget {
-    self.budgetLabel.text = budget;
+//    NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc]init];
+//    [numberFormatter setNumberStyle:NSNumberFormatterCurrencyAccountingStyle];
+    NSNumberFormatter *format = [[NSNumberFormatter alloc]init];
+    format.numberStyle = NSNumberFormatterDecimalStyle;
+    NSNumber *myNumber = [format numberFromString:budget];
+    NSString *budgetString = [format stringFromNumber:myNumber];
+    
+    self.budgetLabel.text = [NSString stringWithFormat:@"$%@", budgetString];
 }
 @end
