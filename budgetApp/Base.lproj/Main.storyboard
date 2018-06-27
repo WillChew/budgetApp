@@ -187,7 +187,7 @@
                     <navigationItem key="navigationItem" id="aHp-Ps-dx9">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="vbD-KD-Xh7">
                             <connections>
-                                <segue destination="dt8-z3-nSR" kind="presentation" id="qmC-hA-UvO"/>
+                                <segue destination="dt8-z3-nSR" kind="presentation" identifier="addExpenseSegue" id="qmC-hA-UvO"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
