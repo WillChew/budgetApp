@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21295F4E20E41E6000747E37 /* AddTransactionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21295F4D20E41E6000747E37 /* AddTransactionViewController.m */; };
+		21295F5120E4208700747E37 /* Expenses.m in Sources */ = {isa = PBXBuildFile; fileRef = 21295F5020E4208700747E37 /* Expenses.m */; };
 		C3838AB120E402B60016951E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C3838AB020E402B60016951E /* AppDelegate.m */; };
 		C3838AB420E402B60016951E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3838AB320E402B60016951E /* ViewController.m */; };
 		C3838AB720E402B60016951E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3838AB520E402B60016951E /* Main.storyboard */; };
@@ -19,6 +21,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		21295F4C20E41E6000747E37 /* AddTransactionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddTransactionViewController.h; sourceTree = "<group>"; };
+		21295F4D20E41E6000747E37 /* AddTransactionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddTransactionViewController.m; sourceTree = "<group>"; };
+		21295F4F20E4208700747E37 /* Expenses.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Expenses.h; sourceTree = "<group>"; };
+		21295F5020E4208700747E37 /* Expenses.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Expenses.m; sourceTree = "<group>"; };
 		C3838AAC20E402B60016951E /* budgetApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = budgetApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3838AAF20E402B60016951E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C3838AB020E402B60016951E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -72,6 +78,10 @@
 				C3838AB220E402B60016951E /* ViewController.h */,
 				C3838AB320E402B60016951E /* ViewController.m */,
 				C3838AB520E402B60016951E /* Main.storyboard */,
+				21295F4F20E4208700747E37 /* Expenses.h */,
+				21295F5020E4208700747E37 /* Expenses.m */,
+				21295F4C20E41E6000747E37 /* AddTransactionViewController.h */,
+				21295F4D20E41E6000747E37 /* AddTransactionViewController.m */,
 				C3838ACB20E40E880016951E /* ConfigureBudgetViewController.h */,
 				C3838ACC20E40E880016951E /* ConfigureBudgetViewController.m */,
 				C3838AC820E40B4B0016951E /* TransactionTableViewCell.h */,
@@ -156,11 +166,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21295F5120E4208700747E37 /* Expenses.m in Sources */,
 				C3838ACA20E40B4B0016951E /* TransactionTableViewCell.m in Sources */,
 				C3838AB420E402B60016951E /* ViewController.m in Sources */,
 				C3838ACD20E40E880016951E /* ConfigureBudgetViewController.m in Sources */,
 				C3838ABF20E402B90016951E /* main.m in Sources */,
 				C3838AB120E402B60016951E /* AppDelegate.m in Sources */,
+				21295F4E20E41E6000747E37 /* AddTransactionViewController.m in Sources */,
 				C3838AC720E40A820016951E /* TransactionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

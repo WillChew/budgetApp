@@ -169,6 +169,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="7kV-jm-AFs" id="WsU-fz-HiN"/>
+                                    <outlet property="delegate" destination="7kV-jm-AFs" id="6wD-93-od4"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -192,10 +196,10 @@
             </objects>
             <point key="canvasLocation" x="2524" y="134.48275862068968"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Transaction View Controller-->
         <scene sceneID="Rdd-2e-fR3">
             <objects>
-                <viewController id="dt8-z3-nSR" sceneMemberID="viewController">
+                <viewController id="dt8-z3-nSR" customClass="AddTransactionViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Hyh-rk-h3x">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -345,11 +349,11 @@
             </objects>
             <point key="canvasLocation" x="592.79999999999995" y="135.38230884557723"/>
         </scene>
-        <!--Item-->
+        <!--Home-->
         <scene sceneID="8RY-xX-aL8">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Cby-eo-F7L" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="G0M-op-fQE"/>
+                    <tabBarItem key="tabBarItem" title="Home" id="G0M-op-fQE"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1Rj-1H-RLM">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -364,11 +368,11 @@
             </objects>
             <point key="canvasLocation" x="593" y="-600"/>
         </scene>
-        <!--Item-->
+        <!--Transactions-->
         <scene sceneID="3vE-Fn-ocy">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="z8O-Ua-m6M" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="zGz-H7-JVk"/>
+                    <tabBarItem key="tabBarItem" title="Transactions" id="zGz-H7-JVk"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tES-0l-9fq">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
