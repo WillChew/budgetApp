@@ -8,7 +8,25 @@
 
 #import "TransactionTableViewCell.h"
 
+@interface TransactionTableViewCell ()
+
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *descLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *amountLabel;
+
+@end
+
 @implementation TransactionTableViewCell
+
+-(void)configureCellWithExpense:(Expense *)expense {
+    self.nameLabel.text = expense.name;
+    self.descLabel.text = expense.desc;
+//    self.dateLabel.text = expense.date; // figure out how to use NSDateFormatter
+//    self.amountLabel = expense.amount; // how would I assign NSDecimal to UILabel
+    
+    
+}
 
 - (void)awakeFromNib {
     [super awakeFromNib];

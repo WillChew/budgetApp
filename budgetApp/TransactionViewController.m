@@ -13,7 +13,18 @@
 @interface TransactionViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *transactionTableView;
+
 @property (nonatomic, strong) NSArray<NSArray*> *transactionArray;
+@property (nonatomic, strong) NSArray<Expense*> *foodSectionArray;
+@property (nonatomic, strong) NSArray<Expense*> *entertainmentSectionArray;
+@property (nonatomic, strong) NSArray<Expense*> *transportationSectionArray;
+@property (nonatomic, strong) NSArray<Expense*> *livingExpensesSectionArray;
+@property (nonatomic, strong) NSArray<Expense*> *miscellaneousSectionArray;
+
+//@property (nonatomic, strong) Expense *expense;
+
+
+
 
 
 @end
@@ -22,16 +33,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-//    [dateFormatter setDateFormat:@"dd.mm.YY HH:mm:ss"];
-//    NSString *dateString = [dateFormatter stringFromDate:currentDate];
+    
+    self.foodSectionArray = @[];
+    self.entertainmentSectionArray = @[];
+    self.transportationSectionArray = @[];
+    self.livingExpensesSectionArray = @[];
+    self.miscellaneousSectionArray = @[];
     
     self.transactionArray = @[
-                              @[],
-                              @[],
-                              @[],
-                              @[],
-                              @[],
+                              @[self.foodSectionArray],
+                              @[self.entertainmentSectionArray],
+                              @[self.livingExpensesSectionArray],
+                              @[self.miscellaneousSectionArray],
+                              @[self.miscellaneousSectionArray],
                               ];
 }
 
@@ -60,7 +74,7 @@
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     TransactionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TransactionCell" forIndexPath:indexPath];
-    cell.
+//    [cell configureCellWithExpense: ];
     return cell;
     
 }

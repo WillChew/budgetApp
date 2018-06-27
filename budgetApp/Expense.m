@@ -10,7 +10,7 @@
 
 @implementation Expense
 
-- (instancetype)initWithName:(NSString *)name amount:(NSNumber *)amount description:(NSString *)desc date:(NSDate *)date {
+- (instancetype)initWithName:(NSString *)name amount:(NSDecimalNumber *)amount description:(NSString *)desc date:(NSDate *)date {
     if (self = [super init]) {
         _name = name;
         _amount = amount;
