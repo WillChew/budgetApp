@@ -11,10 +11,10 @@
 @interface Expense: NSObject
 
 @property (nonatomic,copy) NSString *name;
-@property (nonatomic)  NSNumber *amount;
+@property (nonatomic)  NSDecimalNumber *amount;
 @property (nonatomic,copy) NSString *desc;
 @property (nonatomic) NSDate *date;
 
--(instancetype)initWithName:(NSString*)name amount:(NSNumber*)amount description:(NSString*)desc date:(NSDate*)date;
+-(instancetype)initWithName:(NSString*)name amount:(NSDecimalNumber*)amount description:(NSString*)desc date:(NSDate*)date;
 
 @end

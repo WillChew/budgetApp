@@ -177,6 +177,12 @@
                                                 <constraint firstItem="CdU-dj-jXg" firstAttribute="centerY" secondItem="rgX-CE-hpx" secondAttribute="centerY" id="ygh-ds-sMS"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="amountLabel" destination="CdU-dj-jXg" id="TB6-Ee-Smv"/>
+                                            <outlet property="dateLabel" destination="eVG-lV-DHY" id="nPQ-bl-yoz"/>
+                                            <outlet property="descLabel" destination="0qE-t1-6EP" id="Qu4-Hs-2sG"/>
+                                            <outlet property="nameLabel" destination="VGE-DN-8Hb" id="QoH-u5-Z9X"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

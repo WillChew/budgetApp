@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "ConfigureBudgetViewController.h"
 
-@interface ViewController () <ConfigureBudgetDelegate>
+@interface ViewController ()
 
 @end
 

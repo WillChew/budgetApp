@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Expense.h"
 
 @interface TransactionTableViewCell : UITableViewCell
+
+-(void)configureCellWithExpense:(Expense *)expense;
 
 @end
