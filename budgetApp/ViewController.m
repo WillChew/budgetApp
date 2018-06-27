@@ -7,8 +7,9 @@
 //
 
 #import "ViewController.h"
+#import "ConfigureBudgetViewController.h"
 
-@interface ViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface ViewController () <ConfigureBudgetDelegate>
 
 @end
 
@@ -25,5 +26,13 @@
     // Dispose of any resources that can be recreated.
 }
 
-
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"ConfigureSegue"]) {
+        ConfigureBudgetViewController *cvc = segue.destinationViewController;
+        cvc.delegate = self;
+    }
+}
+-(void)sendBudgetBackVC:(UIViewController *)controller passText:(NSString *)budget {
+    self.budgetLabel.text = budget;
+}
 @end

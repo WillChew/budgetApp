@@ -9,6 +9,8 @@
 #import "ConfigureBudgetViewController.h"
 
 @interface ConfigureBudgetViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *budgetLabel;
+@property (weak, nonatomic) IBOutlet UITextField *configureBudgetTextField;
 
 @end
 
@@ -16,12 +18,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupKeyboard];
     // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)submitButtonPressed:(UIButton *)sender {
+    [self.delegate sendBudgetBackVC:self passText:self.configureBudgetTextField.text];
+    [self.navigationController popViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
+ 
+}
+
+-(void)setupKeyboard {
+    self.configureBudgetTextField.keyboardType = UIKeyboardTypeNumberPad;
 }
 
 /*
@@ -33,5 +46,7 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
 
 @end
