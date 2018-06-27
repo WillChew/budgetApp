@@ -13,6 +13,9 @@
 		C3838AB920E402B90016951E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3838AB820E402B90016951E /* Assets.xcassets */; };
 		C3838ABC20E402B90016951E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3838ABA20E402B90016951E /* LaunchScreen.storyboard */; };
 		C3838ABF20E402B90016951E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C3838ABE20E402B90016951E /* main.m */; };
+		C3838AC720E40A820016951E /* TransactionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3838AC620E40A820016951E /* TransactionViewController.m */; };
+		C3838ACA20E40B4B0016951E /* TransactionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3838AC920E40B4B0016951E /* TransactionTableViewCell.m */; };
+		C3838ACD20E40E880016951E /* ConfigureBudgetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3838ACC20E40E880016951E /* ConfigureBudgetViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,12 @@
 		C3838ABB20E402B90016951E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C3838ABD20E402B90016951E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C3838ABE20E402B90016951E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C3838AC520E40A820016951E /* TransactionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransactionViewController.h; sourceTree = "<group>"; };
+		C3838AC620E40A820016951E /* TransactionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransactionViewController.m; sourceTree = "<group>"; };
+		C3838AC820E40B4B0016951E /* TransactionTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransactionTableViewCell.h; sourceTree = "<group>"; };
+		C3838AC920E40B4B0016951E /* TransactionTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransactionTableViewCell.m; sourceTree = "<group>"; };
+		C3838ACB20E40E880016951E /* ConfigureBudgetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConfigureBudgetViewController.h; sourceTree = "<group>"; };
+		C3838ACC20E40E880016951E /* ConfigureBudgetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConfigureBudgetViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +72,12 @@
 				C3838AB220E402B60016951E /* ViewController.h */,
 				C3838AB320E402B60016951E /* ViewController.m */,
 				C3838AB520E402B60016951E /* Main.storyboard */,
+				C3838ACB20E40E880016951E /* ConfigureBudgetViewController.h */,
+				C3838ACC20E40E880016951E /* ConfigureBudgetViewController.m */,
+				C3838AC820E40B4B0016951E /* TransactionTableViewCell.h */,
+				C3838AC920E40B4B0016951E /* TransactionTableViewCell.m */,
+				C3838AC520E40A820016951E /* TransactionViewController.h */,
+				C3838AC620E40A820016951E /* TransactionViewController.m */,
 				C3838AB820E402B90016951E /* Assets.xcassets */,
 				C3838ABA20E402B90016951E /* LaunchScreen.storyboard */,
 				C3838ABD20E402B90016951E /* Info.plist */,
@@ -141,9 +156,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3838ACA20E40B4B0016951E /* TransactionTableViewCell.m in Sources */,
 				C3838AB420E402B60016951E /* ViewController.m in Sources */,
+				C3838ACD20E40E880016951E /* ConfigureBudgetViewController.m in Sources */,
 				C3838ABF20E402B90016951E /* main.m in Sources */,
 				C3838AB120E402B60016951E /* AppDelegate.m in Sources */,
+				C3838AC720E40A820016951E /* TransactionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
