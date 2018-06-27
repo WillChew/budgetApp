@@ -20,11 +20,19 @@
 @implementation TransactionTableViewCell
 
 -(void)configureCellWithExpense:(Expense *)expense {
-    self.nameLabel.text = expense.name;
-    self.descLabel.text = expense.desc;
-//    self.dateLabel.text = expense.date; // figure out how to use NSDateFormatter
-//    self.amountLabel = expense.amount; // how would I assign NSDecimal to UILabel
     
+    self.nameLabel.text = expense.name;
+    
+    self.descLabel.text = expense.desc;
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"dd-MM-yyyy"];
+    [dateFormatter stringFromDate:expense.date];
+    self.dateLabel.text = [dateFormatter stringFromDate:expense.date];
+    
+    NSNumberFormatter *decimalFormatter = [[NSNumberFormatter alloc] init];
+    [decimalFormatter setNumberStyle: NSNumberFormatterCurrencyStyle];
+    self.amountLabel.text = [decimalFormatter stringFromNumber: expense.amount];
     
 }
 

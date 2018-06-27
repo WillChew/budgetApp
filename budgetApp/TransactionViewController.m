@@ -14,12 +14,12 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *transactionTableView;
 
-@property (nonatomic, strong) NSArray<NSArray*> *transactionArray;
-@property (nonatomic, strong) NSArray<Expense*> *foodSectionArray;
-@property (nonatomic, strong) NSArray<Expense*> *entertainmentSectionArray;
-@property (nonatomic, strong) NSArray<Expense*> *transportationSectionArray;
-@property (nonatomic, strong) NSArray<Expense*> *livingExpensesSectionArray;
-@property (nonatomic, strong) NSArray<Expense*> *miscellaneousSectionArray;
+@property (nonatomic, strong) NSArray<NSMutableArray*> *transactionArray;
+@property (nonatomic, strong) NSMutableArray<Expense*> *foodSectionArray;
+@property (nonatomic, strong) NSMutableArray<Expense*> *entertainmentSectionArray;
+@property (nonatomic, strong) NSMutableArray<Expense*> *transportationSectionArray;
+@property (nonatomic, strong) NSMutableArray<Expense*> *livingExpensesSectionArray;
+@property (nonatomic, strong) NSMutableArray<Expense*> *miscellaneousSectionArray;
 
 //@property (nonatomic, strong) Expense *expense;
 
@@ -34,18 +34,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.foodSectionArray = @[];
-    self.entertainmentSectionArray = @[];
-    self.transportationSectionArray = @[];
-    self.livingExpensesSectionArray = @[];
-    self.miscellaneousSectionArray = @[];
+    self.foodSectionArray = [[NSMutableArray alloc]init];
+
+    self.entertainmentSectionArray = [[NSMutableArray alloc]init];
+    self.transportationSectionArray = [[NSMutableArray alloc]init];
+    self.livingExpensesSectionArray = [[NSMutableArray alloc]init];
+    self.miscellaneousSectionArray = [[NSMutableArray alloc]init];
     
     self.transactionArray = @[
-                              @[self.foodSectionArray],
-                              @[self.entertainmentSectionArray],
-                              @[self.livingExpensesSectionArray],
-                              @[self.miscellaneousSectionArray],
-                              @[self.miscellaneousSectionArray],
+                              self.foodSectionArray,
+                              self.entertainmentSectionArray,
+                              self.livingExpensesSectionArray,
+                              self.miscellaneousSectionArray,
+                              self.miscellaneousSectionArray,
                               ];
 }
 
@@ -74,7 +75,9 @@
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     TransactionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TransactionCell" forIndexPath:indexPath];
-//    [cell configureCellWithExpense: ];
+    NSArray *sectionArray = self.transactionArray[indexPath.section];
+    Expense *expense = sectionArray[indexPath.row];
+    [cell configureCellWithExpense:expense];
     return cell;
     
 }
