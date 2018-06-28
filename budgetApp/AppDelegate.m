@@ -30,6 +30,11 @@
     
     // test reset
     NSLog(@"count: %@", @(results.count));
+        Expense *expense2 = [[Expense alloc] initWithName:@"Fruit" amount:[[NSDecimalNumber alloc]initWithInt:10] description:@"Fresh and Wild" date:[NSDate date]];
+    
+    
+
+    [self saveExpense:expense2 withSection:@"Food"];
     
     return YES;
 }
@@ -94,6 +99,12 @@
 - (void)saveExpense:(Expense *)expense withSection:(NSString *)section {
     // fetch the section using the parameter
     // save the expense object to that section's .expenses property
+    RLMResults<Section*> *expenses = [Section objectsWhere:@"title = %@",section];
+    Section *currentSection = expenses[0];
+
+    [self.realm beginWriteTransaction];
+    [currentSection.expenses addObject:expense];
+    [self.realm commitWriteTransaction];
     
 
 }
