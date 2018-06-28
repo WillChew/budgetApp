@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		03F224D020E554E600B354D5 /* Section.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F224CF20E554E600B354D5 /* Section.m */; };
+		03F224D320E5929D00B354D5 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F224D220E5929D00B354D5 /* DataManager.m */; };
 		21295F4E20E41E6000747E37 /* AddTransactionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21295F4D20E41E6000747E37 /* AddTransactionViewController.m */; };
 		21295F5120E4208700747E37 /* Expense.m in Sources */ = {isa = PBXBuildFile; fileRef = 21295F5020E4208700747E37 /* Expense.m */; };
 		21B1E43F20E592FA0004585F /* AddTxTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B1E43E20E592FA0004585F /* AddTxTableViewController.m */; };
@@ -26,6 +27,8 @@
 /* Begin PBXFileReference section */
 		03F224CE20E554E600B354D5 /* Section.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Section.h; sourceTree = "<group>"; };
 		03F224CF20E554E600B354D5 /* Section.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Section.m; sourceTree = "<group>"; };
+		03F224D120E5929D00B354D5 /* DataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
+		03F224D220E5929D00B354D5 /* DataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
 		21295F4C20E41E6000747E37 /* AddTransactionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddTransactionViewController.h; sourceTree = "<group>"; };
 		21295F4D20E41E6000747E37 /* AddTransactionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddTransactionViewController.m; sourceTree = "<group>"; };
 		21295F4F20E4208700747E37 /* Expense.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Expense.h; sourceTree = "<group>"; };
@@ -105,6 +108,8 @@
 			children = (
 				C3838AAF20E402B60016951E /* AppDelegate.h */,
 				C3838AB020E402B60016951E /* AppDelegate.m */,
+				03F224D120E5929D00B354D5 /* DataManager.h */,
+				03F224D220E5929D00B354D5 /* DataManager.m */,
 				C3838AB220E402B60016951E /* ViewController.h */,
 				C3838AB320E402B60016951E /* ViewController.m */,
 				C3838AB520E402B60016951E /* Main.storyboard */,
