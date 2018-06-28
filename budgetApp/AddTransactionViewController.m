@@ -31,7 +31,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupKeyboards];
-    [self textFieldDidEndEditing:self.dateTextField];
     // Do any additional setup after loading the view.
    
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(viewTapped:)];
@@ -55,7 +54,7 @@
     [datepicker addTarget:self action:@selector(updateTextField:) forControlEvents:UIControlEventValueChanged];
     [self.dateTextField setInputView:datepicker];
     
-    self.amountTextField.keyboardType = UIKeyboardTypeNumberPad;
+    self.amountTextField.keyboardType = UIKeyboardTypeDecimalPad;
     
 }
 
@@ -72,11 +71,23 @@
 
 }
 - (IBAction)submitButtonPressed:(UIButton *)sender {
-    Expense *newExpense = [[Expense alloc]initWithName:self.nameTextField.text amount:self.amountTextField description:self.descriptionTextField.text date:self.date];
-    NSLog(@"date: %@", newExpense.date);
+   
+    NSNumberFormatter *format = [[NSNumberFormatter alloc]init];
+    format.numberStyle = NSNumberFormatterDecimalStyle;
+    NSNumber *amountNumber = [format numberFromString:self.amountTextField.text];
+    NSString *amountString = [format stringFromNumber:amountNumber];
+    NSLog(@"1. %@", amountString);
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    
+    
+    
+//    self.amountTextField.text
+//    Expense *newExpense = [[Expense alloc]initWithName:self.nameTextField.text amount:decimalAmount description:self.descriptionTextField.text date:self.date];
 }
--(void)textFieldDidEndEditing:(UITextField *)textField {
-}
+
+
 /*
 #pragma mark - Navigation
 

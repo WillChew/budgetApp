@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Expense.h"
+
+@protocol AddTransactionDelegate
+-(void)sendDataBack:(UIViewController*)vc passData:(Expense*)addExpense;
+
+@end
 
 @interface AddTransactionViewController : UIViewController
 
+@property (nonatomic,weak)id<AddTransactionDelegate>delegate;
+
 @end
+
+
