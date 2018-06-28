@@ -95,6 +95,8 @@
 }
 
 - (void)reset {
+    RLMResults<Expense*> *allExpenses = [Expense allObjects];
+    [self.realm deleteObjects:allExpenses];
     // delete all objects
 }
 
