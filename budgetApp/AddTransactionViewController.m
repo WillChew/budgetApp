@@ -78,13 +78,19 @@
     NSString *amountString = [format stringFromNumber:amountNumber];
     NSLog(@"1. %@", amountString);
     
-    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    
+ 
+    
+    
     
     
     
     
 //    self.amountTextField.text
 //    Expense *newExpense = [[Expense alloc]initWithName:self.nameTextField.text amount:decimalAmount description:self.descriptionTextField.text date:self.date];
+    
+       [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 
