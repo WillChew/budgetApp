@@ -1,29 +1,23 @@
 //
-//  RealmManager.m
+//  DataHelper.m
 //  budgetApp
 //
 //  Created by Erik Goossens on 2018-06-28.
 //  Copyright © 2018 Erik Goossens. All rights reserved.
 //
 
-#import "DataManager.h"
+#import "DataHelper.h"
 #import "Section.h"
 #import "Expense.h"
 
-@interface DataManager()
+@interface DataHelper()
 
 @property (nonatomic) RLMRealm *realm;
 @property (nonatomic) RLMResults<Section*>* sections;
 
 @end
 
-@implementation DataManager
-
-
-// override init and set up 2 properties in private interface
-// call from intializer
-// realm needs to be set up in initializer
-
+@implementation DataHelper
 - (void)createTestObjects {
     
     Section *food = self.sections[0];
@@ -119,8 +113,11 @@
 //
 //}
 
-
-
+//- (void) saveBudget:(NSNumber *)amount {
+//
+////    NSUserDefaults *defaults = [NSUserDe]
+//
+//}
 
 
 @end

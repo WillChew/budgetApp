@@ -1,5 +1,5 @@
 //
-//  RealmManager.h
+//  DataHelper.h
 //  budgetApp
 //
 //  Created by Erik Goossens on 2018-06-28.
@@ -8,14 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "Realm/Realm.h"
-
-
 @class Section;
 @class Expense;
 
-@interface DataManager : NSObject
-
-#pragma mark - Realm
+@interface DataHelper : NSObject
+//#pragma mark - Realm
 
 - (void)createTestObjects;
 
@@ -27,13 +24,13 @@
 
 - (void)reset;
 
-- (void)test;
-#pragma mark - UserDefaults
+//#pragma mark - UserDefaults
 
 // 2 methods
 
 // 1. saveBudget: -> Void
 // 2. getBudget -> NSNumber
+
 
 
 @end
