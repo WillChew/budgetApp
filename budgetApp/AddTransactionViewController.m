@@ -60,36 +60,32 @@
 
 -(void)updateTextField:(id)sender {
     UIDatePicker *picker = (UIDatePicker*)self.dateTextField.inputView;
+    self.date = picker.date;
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
     [dateFormatter setDateFormat:@"dd-MM-yyyy"];
-    [dateFormatter stringFromDate:picker.date];
-    NSString *date = [dateFormatter stringFromDate:picker.date];
-    NSLog(@"%@", date);
-//    NSDate *date2 = [dateFormatter dateFromString:date];
+    [dateFormatter stringFromDate:self.date];
+    NSString *date = [dateFormatter stringFromDate:self.date];
+    
     self.date = [dateFormatter dateFromString:date];
+    self.dateTextField.text = date;
     
 
 }
 - (IBAction)submitButtonPressed:(UIButton *)sender {
-   
+    NSLog(@"%@", self.dateTextField.description);
     NSNumberFormatter *format = [[NSNumberFormatter alloc]init];
     format.numberStyle = NSNumberFormatterDecimalStyle;
     NSNumber *amountNumber = [format numberFromString:self.amountTextField.text];
     NSString *amountString = [format stringFromNumber:amountNumber];
-    NSLog(@"1. %@", amountString);
+    NSDecimalNumber *numberDecimal = [NSDecimalNumber decimalNumberWithString:amountString];
     
     
+  
     
- 
-    
-    
-    
-    
-    
-    
-//    self.amountTextField.text
-//    Expense *newExpense = [[Expense alloc]initWithName:self.nameTextField.text amount:decimalAmount description:self.descriptionTextField.text date:self.date];
-    
+ NSLog(@"%@", self.date);
+
+    Expense *newExpense = [[Expense alloc]initWithName:self.nameTextField.text amount:numberDecimal description:self.descriptionTextField.text date:self.date];
+    NSLog(@"%@", newExpense.date);
        [self dismissViewControllerAnimated:YES completion:nil];
 }
 
