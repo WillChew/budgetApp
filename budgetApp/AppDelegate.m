@@ -24,6 +24,11 @@
 //    [self createSectionObjects];
     RLMResults<Section*> *results = [self createSectionObjects];
     
+    // init an expense and call the save method below to test it
+    // fetch all sections method, call it from here to test it.
+    
+    // test reset
+    NSLog(@"count: %@", @(results.count));
     
     return YES;
 }
@@ -58,11 +63,50 @@
     
 }
 
+#pragma mark - Move to RealmManager
+
+// this could be in the init method of the realm manager
 - (RLMResults<Section*> *)createSectionObjects {
     // check whether the sections exist. Query for all section, count on the section
     // if they don't then create and save them
+    RLMResults<Section*> *sections = [Section allObjects];
+    if (sections.count == 0) {
+        Section *food = [[Section alloc] init];
+        food.title = @"Food";
+        Section *entertainment = [[Section alloc] init];
+        entertainment.title = @"Entertainment";
+        [self.realm beginWriteTransaction];
+        [self.realm addObjects:@[food, entertainment]];
+        [self.realm commitWriteTransaction];
+        sections = [Section allObjects];
+        
+    }
+    return sections;
+}
+
+- (void)saveExpense:(Expense *)expense withSection:(NSString *)section {
+    // fetch the section using the parameter
+    // save the expense object to that section's .expenses property
+}
+
+- (RLMArray<Section*>*)fetchAllSections {
+    //
+    return nil;
+}
+
+- (void)reset {
+    // delete all objects
+}
+
+- (void)deleteExpense:(Expense *)expense {
     
 }
+
+
+
+
+
+
 
 
 
