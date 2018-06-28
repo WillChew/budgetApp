@@ -79,14 +79,7 @@
     NSLog(@"1. %@", amountString);
     
     
-    
- 
-    
-    
-    
-    
-    
-    
+
 //    self.amountTextField.text
 //    Expense *newExpense = [[Expense alloc]initWithName:self.nameTextField.text amount:decimalAmount description:self.descriptionTextField.text date:self.date];
     
