@@ -27,6 +27,7 @@
 
 - (void)reset;
 
+- (void)test;
 #pragma mark - UserDefaults
 
 // 2 methods
