@@ -7,15 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Realm/Realm.h"
+@class Section;
 
+@interface Expense: RLMObject
 
-@interface Expense: NSObject
-
-@property (nonatomic,copy) NSString *name;
-@property (nonatomic)  NSDecimalNumber *amount;
-@property (nonatomic,copy) NSString *desc;
-@property (nonatomic) NSDate *date;
+@property NSString *name;
+@property NSNumber<RLMFloat> *amount;
+@property NSString *desc;
+@property NSDate *date;
+@property Section *section;
 
 -(instancetype)initWithName:(NSString*)name amount:(NSDecimalNumber*)amount description:(NSString*)desc date:(NSDate*)date;
 
 @end
+
+RLM_ARRAY_TYPE(Expense)

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03F224D020E554E600B354D5 /* Section.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F224CF20E554E600B354D5 /* Section.m */; };
 		21295F4E20E41E6000747E37 /* AddTransactionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21295F4D20E41E6000747E37 /* AddTransactionViewController.m */; };
 		21295F5120E4208700747E37 /* Expense.m in Sources */ = {isa = PBXBuildFile; fileRef = 21295F5020E4208700747E37 /* Expense.m */; };
 		AC8EE5D4F6590FC3CBAF1058 /* libPods-budgetApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EE4051E598A102449C360195 /* libPods-budgetApp.a */; };
@@ -22,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		03F224CE20E554E600B354D5 /* Section.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Section.h; sourceTree = "<group>"; };
+		03F224CF20E554E600B354D5 /* Section.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Section.m; sourceTree = "<group>"; };
 		21295F4C20E41E6000747E37 /* AddTransactionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddTransactionViewController.h; sourceTree = "<group>"; };
 		21295F4D20E41E6000747E37 /* AddTransactionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddTransactionViewController.m; sourceTree = "<group>"; };
 		21295F4F20E4208700747E37 /* Expense.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Expense.h; sourceTree = "<group>"; };
@@ -104,6 +107,8 @@
 				C3838AB520E402B60016951E /* Main.storyboard */,
 				21295F4F20E4208700747E37 /* Expense.h */,
 				21295F5020E4208700747E37 /* Expense.m */,
+				03F224CE20E554E600B354D5 /* Section.h */,
+				03F224CF20E554E600B354D5 /* Section.m */,
 				21295F4C20E41E6000747E37 /* AddTransactionViewController.h */,
 				21295F4D20E41E6000747E37 /* AddTransactionViewController.m */,
 				C3838ACB20E40E880016951E /* ConfigureBudgetViewController.h */,
@@ -220,6 +225,7 @@
 				C3838AB120E402B60016951E /* AppDelegate.m in Sources */,
 				21295F4E20E41E6000747E37 /* AddTransactionViewController.m in Sources */,
 				C3838AC720E40A820016951E /* TransactionViewController.m in Sources */,
+				03F224D020E554E600B354D5 /* Section.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

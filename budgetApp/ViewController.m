@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "ConfigureBudgetViewController.h"
+#import "AppDelegate.h"
 
 @interface ViewController () <ConfigureBudgetDelegate>
 
@@ -17,6 +18,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
     // Do any additional setup after loading the view, typically from a nib.
 }
 

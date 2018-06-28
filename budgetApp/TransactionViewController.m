@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *transactionTableView;
 
 @property (nonatomic, strong) NSArray<NSMutableArray*> *transactionArray;
+
 @property (nonatomic, strong) NSMutableArray<Expense*> *foodSectionArray;
 @property (nonatomic, strong) NSMutableArray<Expense*> *entertainmentSectionArray;
 @property (nonatomic, strong) NSMutableArray<Expense*> *transportationSectionArray;

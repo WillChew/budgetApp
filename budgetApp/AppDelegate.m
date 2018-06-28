@@ -7,9 +7,12 @@
 //
 
 #import "AppDelegate.h"
+#import "Realm/Realm.h"
+#import "Section.h"
+#import "Expense.h"
 
 @interface AppDelegate ()
-
+@property (nonatomic) RLMRealm *realm;
 @end
 
 @implementation AppDelegate
@@ -17,8 +20,51 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.realm = [RLMRealm defaultRealm];
+//    [self createSectionObjects];
+    RLMResults<Section*> *results = [self createSectionObjects];
+    
+    
     return YES;
 }
+
+- (void)createTestObjects {
+    
+    
+//    Section *section1 = [[Section alloc] init];
+//    section1.title = @"Food";
+//
+//    Expense *expense1 = [[Expense alloc] initWithName:@"Ice cream" amount:[[NSDecimalNumber alloc]initWithInt:10] description:@"Campo on King" date:[NSDate date]];
+//
+//    [section1.expenses addObject:expense1];
+    
+//    Section *section2 = [[Section alloc] init];
+//    section2.title = @"Food";
+//
+//    Expense *expense2 = [[Expense alloc] initWithName:@"Fruit" amount:[[NSDecimalNumber alloc]initWithInt:10] description:@"Fresh and Wild" date:[NSDate date]];
+//
+//    [section2.expenses addObject:expense2];
+//
+//    [self.realm transactionWithBlock:^{
+//        [self.realm addObject:section2];
+//    } error:nil
+//     ];
+//
+//
+//    Expense *e2 = [[Expense alloc]initWithName:@"bills" amount:[[NSDecimalNumber alloc]initWithInt:20] description:@"paid bills" date:[NSDate date]];
+//    Section *s2 = [[Section alloc] init];
+//    s2.title = @"Fun";
+//    e2.section = s2;
+    
+}
+
+- (RLMResults<Section*> *)createSectionObjects {
+    // check whether the sections exist. Query for all section, count on the section
+    // if they don't then create and save them
+    
+}
+
+
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {

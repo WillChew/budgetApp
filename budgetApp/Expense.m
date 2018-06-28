@@ -7,6 +7,7 @@
 //
 
 #import "Expense.h"
+#import "Section.h"
 
 @implementation Expense
 
