@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "ConfigureBudgetViewController.h"
-#import "AppDelegate.h"
+
 
 @interface ViewController () <ConfigureBudgetDelegate>
 

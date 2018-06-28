@@ -11,6 +11,7 @@
 #import "Section.h"
 #import "Expense.h"
 
+
 @interface AppDelegate ()
 @property (nonatomic) RLMRealm *realm;
 @end
@@ -75,8 +76,14 @@
         food.title = @"Food";
         Section *entertainment = [[Section alloc] init];
         entertainment.title = @"Entertainment";
+        Section *utility = [[Section alloc] init];
+        utility.title = @"Utility";
+        Section *transportation = [[Section alloc]init];
+        transportation.title = @"Transportation";
+        Section *miscellaneous = [[Section alloc] init];
+        miscellaneous.title = @"Miscellaneous";
         [self.realm beginWriteTransaction];
-        [self.realm addObjects:@[food, entertainment]];
+        [self.realm addObjects:@[food, entertainment, utility, transportation, miscellaneous]];
         [self.realm commitWriteTransaction];
         sections = [Section allObjects];
         
@@ -87,20 +94,24 @@
 - (void)saveExpense:(Expense *)expense withSection:(NSString *)section {
     // fetch the section using the parameter
     // save the expense object to that section's .expenses property
-}
-
-- (RLMArray<Section*>*)fetchAllSections {
-    //
-    return nil;
-}
-
-- (void)reset {
-    // delete all objects
-}
-
-- (void)deleteExpense:(Expense *)expense {
     
+
 }
+//
+//- (RLMArray<Section*>*)fetchAllSections {
+//    
+//    
+//    RLMArray<Section*>*sectionArray = [
+//    return nil;
+//}
+//
+//- (void)reset {
+//    // delete all objects
+//}
+//
+//- (void)deleteExpense:(Expense *)expense {
+//    
+//}
 
 
 
