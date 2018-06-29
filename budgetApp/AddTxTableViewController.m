@@ -86,6 +86,7 @@
     
     Expense *newExpense = [[Expense alloc]initWithName:self.nameTextField.text amount:numberDecimal description:self.descriptionTextField.text date:self.date];
     NSLog(@"%@", newExpense.date);
+    [self.dataHelper saveExpense:newExpense withSection:self.sectionTextField.text];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
     

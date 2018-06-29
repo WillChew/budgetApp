@@ -32,11 +32,14 @@
 }
 
 - (void) setupDataHelper {
-    ViewController *viewController = (ViewController*)((UINavigationController*)((UITabBarController *)self.window.rootViewController).viewControllers[0]).topViewController;
-    TransactionViewController *transVC = (TransactionViewController*)((UINavigationController*)((UITabBarController *)self.window.rootViewController).viewControllers[0]).topViewController;
-    DataHelper *helper = [DataHelper new];
-    transVC.dataHelper = helper;
-    viewController.dataHelper = helper;
+    self.dataHelper = [DataHelper new];
+    UITabBarController *tab = (UITabBarController *)self.window.rootViewController;
+    UINavigationController *nav1 = tab.viewControllers[0];
+    UINavigationController *nav2 = tab.viewControllers[1];
+    ViewController *viewController = (ViewController *)nav1.topViewController;
+    TransactionViewController *transVC = (TransactionViewController *)nav2.topViewController;
+    transVC.dataHelper = self.dataHelper;
+    viewController.dataHelper = self.dataHelper;
 }
 
 @end

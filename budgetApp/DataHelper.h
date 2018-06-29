@@ -12,9 +12,6 @@
 @class Expense;
 
 @interface DataHelper : NSObject
-//#pragma mark - Realm
-
-- (void)createTestObjects;
 
 - (RLMResults<Section*> *)createSectionObjects;
 
@@ -24,7 +21,6 @@
 
 - (void)reset;
 
-//#pragma mark - UserDefaults
 
 // 2 methods
 
