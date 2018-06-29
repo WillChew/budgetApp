@@ -10,14 +10,19 @@
 #import "ConfigureBudgetViewController.h"
 
 
-
-
 @implementation ViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    // Do any additional setup after loading the view, typically from a nib.
+//- (void)viewDidLoad {
+//    [super viewDidLoad];
+//
+//    // Do any additional setup after loading the view, typically from a nib.
+//}
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.budgetLabel.text = [NSUserDefaults.standardUserDefaults stringForKey:@"Budget"];
+    [self.view setNeedsDisplay];
+    [self.dataHelper fetchAllSections];
 }
 
 
@@ -30,17 +35,9 @@
     if ([segue.identifier isEqualToString:@"ConfigureSegue"]) {
         ConfigureBudgetViewController *cvc = segue.destinationViewController;
         cvc.dataHelper = self.dataHelper;
-//        cvc.delegate = self;
     }
 }
--(void)sendBudgetBackVC:(UIViewController *)controller passText:(NSString *)budget {
-//    NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc]init];
-//    [numberFormatter setNumberStyle:NSNumberFormatterCurrencyAccountingStyle];
-    NSNumberFormatter *format = [[NSNumberFormatter alloc]init];
-    format.numberStyle = NSNumberFormatterDecimalStyle;
-    NSNumber *myNumber = [format numberFromString:budget];
-    NSString *budgetString = [format stringFromNumber:myNumber];
-    
-    self.budgetLabel.text = [NSString stringWithFormat:@"$%@", budgetString];
-}
+
+
+
 @end

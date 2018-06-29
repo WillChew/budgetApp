@@ -36,21 +36,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.foodSectionArray = [[NSMutableArray alloc]init];
-
-    self.entertainmentSectionArray = [[NSMutableArray alloc]init];
-    self.transportationSectionArray = [[NSMutableArray alloc]init];
-    self.livingExpensesSectionArray = [[NSMutableArray alloc]init];
-    self.miscellaneousSectionArray = [[NSMutableArray alloc]init];
-    
-    self.transactionArray = @[
-                              self.foodSectionArray,
-                              self.entertainmentSectionArray,
-                              self.livingExpensesSectionArray,
-                              self.miscellaneousSectionArray,
-                              self.miscellaneousSectionArray,
-                              ];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -69,7 +54,7 @@
 */
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return self.transactionArray.count;
+    return 100;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
