@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0375151520E5AA85002F27F1 /* DataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0375151420E5AA85002F27F1 /* DataHelper.m */; };
 		03F224D020E554E600B354D5 /* Section.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F224CF20E554E600B354D5 /* Section.m */; };
-		21295F4E20E41E6000747E37 /* AddTransactionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21295F4D20E41E6000747E37 /* AddTransactionViewController.m */; };
 		21295F5120E4208700747E37 /* Expense.m in Sources */ = {isa = PBXBuildFile; fileRef = 21295F5020E4208700747E37 /* Expense.m */; };
 		21B1E43F20E592FA0004585F /* AddTxTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B1E43E20E592FA0004585F /* AddTxTableViewController.m */; };
 		AC8EE5D4F6590FC3CBAF1058 /* libPods-budgetApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EE4051E598A102449C360195 /* libPods-budgetApp.a */; };
@@ -29,8 +28,6 @@
 		0375151420E5AA85002F27F1 /* DataHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataHelper.m; sourceTree = "<group>"; };
 		03F224CE20E554E600B354D5 /* Section.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Section.h; sourceTree = "<group>"; };
 		03F224CF20E554E600B354D5 /* Section.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Section.m; sourceTree = "<group>"; };
-		21295F4C20E41E6000747E37 /* AddTransactionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddTransactionViewController.h; sourceTree = "<group>"; };
-		21295F4D20E41E6000747E37 /* AddTransactionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddTransactionViewController.m; sourceTree = "<group>"; };
 		21295F4F20E4208700747E37 /* Expense.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Expense.h; sourceTree = "<group>"; };
 		21295F5020E4208700747E37 /* Expense.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Expense.m; sourceTree = "<group>"; };
 		21B1E43D20E592FA0004585F /* AddTxTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddTxTableViewController.h; sourceTree = "<group>"; };
@@ -119,8 +116,6 @@
 				03F224CF20E554E600B354D5 /* Section.m */,
 				21B1E43D20E592FA0004585F /* AddTxTableViewController.h */,
 				21B1E43E20E592FA0004585F /* AddTxTableViewController.m */,
-				21295F4C20E41E6000747E37 /* AddTransactionViewController.h */,
-				21295F4D20E41E6000747E37 /* AddTransactionViewController.m */,
 				C3838ACB20E40E880016951E /* ConfigureBudgetViewController.h */,
 				C3838ACC20E40E880016951E /* ConfigureBudgetViewController.m */,
 				C3838AC820E40B4B0016951E /* TransactionTableViewCell.h */,
@@ -234,7 +229,6 @@
 				C3838ACD20E40E880016951E /* ConfigureBudgetViewController.m in Sources */,
 				C3838ABF20E402B90016951E /* main.m in Sources */,
 				C3838AB120E402B60016951E /* AppDelegate.m in Sources */,
-				21295F4E20E41E6000747E37 /* AddTransactionViewController.m in Sources */,
 				C3838AC720E40A820016951E /* TransactionViewController.m in Sources */,
 				0375151520E5AA85002F27F1 /* DataHelper.m in Sources */,
 				03F224D020E554E600B354D5 /* Section.m in Sources */,

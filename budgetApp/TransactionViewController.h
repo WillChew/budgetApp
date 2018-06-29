@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DataHelper.h"
 
 @interface TransactionViewController : UIViewController
+
+@property (nonatomic, strong) DataHelper *dataHelper;
+
 
 @end

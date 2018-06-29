@@ -12,6 +12,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *budgetLabel;
 @property (weak, nonatomic) IBOutlet UITextField *configureBudgetTextField;
 
+
 @end
 
 @implementation ConfigureBudgetViewController
@@ -27,7 +28,8 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)submitButtonPressed:(UIButton *)sender {
-    [self.delegate sendBudgetBackVC:self passText:self.configureBudgetTextField.text];
+//    [self.delegate sendBudgetBackVC:self passText:self.configureBudgetTextField.text];
+    // saving using DataHelper
     [self.navigationController popViewControllerAnimated:YES];
     [self dismissViewControllerAnimated:YES completion:nil];
  

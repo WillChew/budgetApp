@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface AddTxTableViewController : UITableViewController
-
+// property for DataHelper
 @end

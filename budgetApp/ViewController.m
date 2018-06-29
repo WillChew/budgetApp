@@ -10,9 +10,7 @@
 #import "ConfigureBudgetViewController.h"
 
 
-@interface ViewController () <ConfigureBudgetDelegate>
 
-@end
 
 @implementation ViewController
 
@@ -31,7 +29,8 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"ConfigureSegue"]) {
         ConfigureBudgetViewController *cvc = segue.destinationViewController;
-        cvc.delegate = self;
+        cvc.dataHelper = self.dataHelper;
+//        cvc.delegate = self;
     }
 }
 -(void)sendBudgetBackVC:(UIViewController *)controller passText:(NSString *)budget {

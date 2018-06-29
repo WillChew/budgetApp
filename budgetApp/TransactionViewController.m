@@ -12,6 +12,7 @@
 
 @interface TransactionViewController () <UITableViewDataSource, UITableViewDelegate>
 
+
 @property (weak, nonatomic) IBOutlet UITableView *transactionTableView;
 
 @property (nonatomic, strong) NSArray<NSMutableArray*> *transactionArray;
@@ -80,8 +81,9 @@
     Expense *expense = sectionArray[indexPath.row];
     [cell configureCellWithExpense:expense];
     return cell;
-    
 }
+
+// prepareForSegue and pass the AddTxVC the DataHelper instance self.dataHelper
 
 
 
