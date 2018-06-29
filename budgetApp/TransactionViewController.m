@@ -48,8 +48,12 @@
     // set the sections property to the queried sections from data helper
     self.sections = [self.dataHelper fetchAllSections];
     
-    
 
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.transactionTableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
