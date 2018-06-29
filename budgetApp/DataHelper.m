@@ -13,12 +13,29 @@
 @interface DataHelper()
 
 @property (nonatomic) RLMRealm *realm;
-@property (nonatomic) RLMResults<Section*>* sections;
+@property (nonatomic) RLMArray<Section*>* sections;
 
 
 @end
 
 @implementation DataHelper
+
+
+// override init
+// call createSections
+// set the return to sections property
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.realm = [RLMRealm defaultRealm];
+        self.sections = (RLMArray <Section*>*)[self createSectionObjects];
+//        [self createTestObjects];
+    }
+    return self;
+}
+
 - (void)createTestObjects {
     
     Section *food = self.sections[0];
@@ -53,9 +70,7 @@
     
 }
 
-#pragma mark - Move to RealmManager
 
-// this could be in the init method of the realm manager
 - (RLMResults<Section*> *)createSectionObjects {
     RLMResults<Section*> *sections = [Section allObjects];
     if (sections.count == 0) {
@@ -73,8 +88,8 @@
         [self.realm addObjects:@[food, entertainment, utility, transportation, miscellaneous]];
         [self.realm commitWriteTransaction];
         sections = [Section allObjects];
-        
     }
+    
     return sections;
 }
 
@@ -117,11 +132,11 @@
 //}
 
 - (void) saveBudget:(NSString*)amount {
-
+    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSNumber *budgetAmount = @([amount integerValue]);
     [defaults setObject:budgetAmount forKey:@"Budget"];
-
+    
 }
 
 

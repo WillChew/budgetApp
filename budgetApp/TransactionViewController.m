@@ -10,19 +10,16 @@
 #import "Expense.h"
 #import "TransactionTableViewCell.h"
 #import "AddTxTableViewController.h"
+#import "Section.h"
 
 @interface TransactionViewController () <UITableViewDataSource, UITableViewDelegate>
 
 
 @property (weak, nonatomic) IBOutlet UITableView *transactionTableView;
 
-@property (nonatomic, strong) NSArray<NSMutableArray*> *transactionArray;
+@property (nonatomic) RLMArray<Section*>* sections;
 
-@property (nonatomic, strong) NSMutableArray<Expense*> *foodSectionArray;
-@property (nonatomic, strong) NSMutableArray<Expense*> *entertainmentSectionArray;
-@property (nonatomic, strong) NSMutableArray<Expense*> *transportationSectionArray;
-@property (nonatomic, strong) NSMutableArray<Expense*> *livingExpensesSectionArray;
-@property (nonatomic, strong) NSMutableArray<Expense*> *miscellaneousSectionArray;
+
 
 //@property (nonatomic, strong) Expense *expense;
 
@@ -33,6 +30,18 @@
 @end
 
 @implementation TransactionViewController
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    if (self = [super initWithCoder:aDecoder]) {
+        
+    }
+    return self;
+}
+
+- (void)setDataHelper:(DataHelper *)dataHelper {
+    
+    _dataHelper = dataHelper;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -58,13 +67,16 @@
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.transactionArray[section].count;
+    //given a particular section, what is the number of rows within that section
+    Section *givenSection = self.sections[section];
+    return givenSection.expenses.count;
+    
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     TransactionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TransactionCell" forIndexPath:indexPath];
-    NSArray *sectionArray = self.transactionArray[indexPath.section];
-    Expense *expense = sectionArray[indexPath.row];
+    Section *section = self.sections[indexPath.section];
+    Expense *expense = section.expenses[indexPath.row];
     [cell configureCellWithExpense:expense];
     return cell;
 }

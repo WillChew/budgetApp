@@ -25,11 +25,11 @@
     [self.dataHelper fetchAllSections];
 }
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)setDataHelper:(DataHelper *)dataHelper {
+    
+    _dataHelper = dataHelper;
 }
+
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"ConfigureSegue"]) {
