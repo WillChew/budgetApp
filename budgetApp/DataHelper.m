@@ -114,17 +114,41 @@
     
 }
 //
+
+- (NSNumber *) totalExpenses {
+//    NSNumber *sum = [numbers valueForKeyPath:@"@sum.number"];
+//    NSPredicate *pred = [NSPredicate predicateWithFormat:@"@sum.amount"];
+    RLMResults <Expense*>*expenses = [Expense allObjects];
+    NSNumber *num = [expenses sumOfProperty:@"amount"];
+    return num;
+}
+
+
 - (RLMArray<Section*>*)fetchAllSections {
     return self.sections;
 }
 //
 - (void)reset {
+    RLMResults <Expense*>*expensesToDelete = [Expense allObjects];
+    [self.realm beginWriteTransaction];
+    [self.realm deleteObjects:expensesToDelete];
+    [self.realm commitWriteTransaction];
     
 }
 //
 //- (void)deleteExpense:(Expense *)expense {
 //
 //}
+
+- (NSString*) budgetRemaining {
+    NSInteger budgetAfterExpenses = [self getBudget] - [[self totalExpenses] integerValue];
+    NSDecimalNumber *decimal = [[NSDecimalNumber alloc]initWithInteger:budgetAfterExpenses];
+    return decimal.stringValue;
+}
+
+- (NSInteger) getBudget {
+    return (NSInteger)([NSUserDefaults.standardUserDefaults integerForKey:@"Budget"]);
+}
 
 - (void) saveBudget:(NSString*)amount {
     

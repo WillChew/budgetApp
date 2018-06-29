@@ -28,5 +28,8 @@
 // 2. getBudget -> NSNumber
 - (void) saveBudget:(NSString*)amount;
 
+- (NSNumber *) totalExpenses;
+
+- (NSString*) budgetRemaining;
 
 @end

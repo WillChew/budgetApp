@@ -20,9 +20,9 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.budgetLabel.text = [NSUserDefaults.standardUserDefaults stringForKey:@"Budget"];
-    [self.view setNeedsDisplay];
-    [self.dataHelper fetchAllSections];
+    self.budgetLabel.text = [self.dataHelper budgetRemaining];
+//    [self.dataHelper totalExpenses];
+//    [self.dataHelper fetchAllSections];
 }
 
 - (void)setDataHelper:(DataHelper *)dataHelper {
@@ -36,6 +36,9 @@
         ConfigureBudgetViewController *cvc = segue.destinationViewController;
         cvc.dataHelper = self.dataHelper;
     }
+}
+- (IBAction)resetButtonPressed:(id)sender {
+    [self.dataHelper reset];
 }
 
 
