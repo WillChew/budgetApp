@@ -33,6 +33,7 @@
     [self.dataHelper saveBudget:self.configureBudgetTextField.text];
     [self.navigationController popViewControllerAnimated:YES];
     [self dismissViewControllerAnimated:YES completion:nil];
+    NSLog(@"%@", [[NSUserDefaults standardUserDefaults]dictionaryRepresentation]);
     
     
  
