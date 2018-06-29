@@ -9,6 +9,7 @@
 #import "TransactionViewController.h"
 #import "Expense.h"
 #import "TransactionTableViewCell.h"
+#import "AddTxTableViewController.h"
 
 @interface TransactionViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -83,8 +84,15 @@
     return cell;
 }
 
-// prepareForSegue and pass the AddTxVC the DataHelper instance self.dataHelper
 
+
+// prepareForSegue and pass the AddTxVC the DataHelper instance self.dataHelper
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"GoToAdd"]) {
+        AddTxTableViewController *addTxVC = segue.destinationViewController;
+        addTxVC.dataHelper = self.dataHelper;
+    }
+}
 
 
 

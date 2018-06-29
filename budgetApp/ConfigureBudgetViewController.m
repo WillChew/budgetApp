@@ -30,13 +30,16 @@
 - (IBAction)submitButtonPressed:(UIButton *)sender {
 //    [self.delegate sendBudgetBackVC:self passText:self.configureBudgetTextField.text];
     // saving using DataHelper
+    [self.dataHelper saveBudget:self.configureBudgetTextField.text];
     [self.navigationController popViewControllerAnimated:YES];
     [self dismissViewControllerAnimated:YES completion:nil];
+    
+    
  
 }
 
 -(void)setupKeyboard {
-    self.configureBudgetTextField.keyboardType = UIKeyboardTypeNumberPad;
+    self.configureBudgetTextField.keyboardType = UIKeyboardTypeDecimalPad;
 }
 
 /*

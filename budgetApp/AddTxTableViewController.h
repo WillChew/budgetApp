@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DataHelper.h"
 
 @interface AddTxTableViewController : UITableViewController
-// property for DataHelper
+
+@property (nonatomic, strong) DataHelper *dataHelper;
+
 @end

@@ -203,7 +203,7 @@
                     <navigationItem key="navigationItem" id="aHp-Ps-dx9">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="vbD-KD-Xh7">
                             <connections>
-                                <segue destination="10Q-lL-jSy" kind="presentation" id="hgq-ok-0OE"/>
+                                <segue destination="10Q-lL-jSy" kind="presentation" identifier="GoToAdd" id="hgq-ok-0OE"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

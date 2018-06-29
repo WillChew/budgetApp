@@ -113,11 +113,13 @@
 //
 //}
 
-//- (void) saveBudget:(NSNumber *)amount {
-//
-//    NSUserDefaults *defaults = [NSUserDefaults]
-//    
-//}
+- (void) saveBudget:(NSString*)amount {
+
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSNumber *budgetAmount = @([amount integerValue]);
+    [defaults setObject:budgetAmount forKey:@"Budget"];
+
+}
 
 
 @end

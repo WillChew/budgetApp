@@ -8,7 +8,6 @@
 
 #import "AddTxTableViewController.h"
 #import "Expense.h"
-#import "DataHelper.h"
 
 @interface AddTxTableViewController ()
 
@@ -19,8 +18,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *sectionTextField;
 @property (nonatomic) NSDate *date;
 
-@property (nonatomic, strong) DataHelper *dataHelper;
-    
+
 @end
 
 @implementation AddTxTableViewController

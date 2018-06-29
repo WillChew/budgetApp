@@ -30,7 +30,7 @@
 
 // 1. saveBudget: -> Void
 // 2. getBudget -> NSNumber
-
+- (void) saveBudget:(NSString*)amount;
 
 
 @end
