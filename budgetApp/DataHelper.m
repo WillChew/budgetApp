@@ -115,12 +115,7 @@
 }
 //
 - (RLMArray<Section*>*)fetchAllSections {
-//    NSPredicate *pred = [NSPredicate predicateWithFormat:@"title != nil"];
-//    RLMResults *test = [Section objectsWithPredicate:pred];
-//    self.sectionTitles = [[RLMArray alloc]initWithObjectClassName:test];
-//    
-
-    return nil;
+    return self.sections;
 }
 //
 - (void)reset {

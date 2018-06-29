@@ -72,7 +72,7 @@
 */
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 100;
+    return self.sections.count;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
