@@ -7,10 +7,12 @@
 //
 
 #import "ConfigureBudgetViewController.h"
+#import "ViewController.h"
 
 @interface ConfigureBudgetViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *budgetLabel;
 @property (weak, nonatomic) IBOutlet UITextField *configureBudgetTextField;
+
 
 
 @end
@@ -24,30 +26,27 @@
 }
 
 - (IBAction)submitButtonPressed:(UIButton *)sender {
-//    [self.delegate sendBudgetBackVC:self passText:self.configureBudgetTextField.text];
+
     // saving using DataHelper
     [self.dataHelper saveBudget:self.configureBudgetTextField.text];
     [self.navigationController popViewControllerAnimated:YES];
-    [self dismissViewControllerAnimated:YES completion:nil];
-    NSLog(@"%@", [[NSUserDefaults standardUserDefaults]dictionaryRepresentation]);
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:^{
+        [super viewWillAppear:TRUE];
+    }];
     
+    NSLog(@"%@", [[NSUserDefaults standardUserDefaults]dictionaryRepresentation]);
+
+
     
  
 }
+
+
 
 -(void)setupKeyboard {
     self.configureBudgetTextField.keyboardType = UIKeyboardTypeDecimalPad;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 
 

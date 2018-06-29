@@ -11,7 +11,7 @@
 
 #import "Expense.h"
 
-
+RLM_ARRAY_TYPE(Section)
 @interface Section : RLMObject
 
 @property RLMArray<Expense *><Expense>*expenses;

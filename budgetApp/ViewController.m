@@ -10,22 +10,19 @@
 #import "ConfigureBudgetViewController.h"
 
 
-
-
 @implementation ViewController
 
-- (instancetype)initWithCoder:(NSCoder *)aDecoder {
-    if (self = [super initWithCoder:aDecoder]) {
-        
-    }
-    return self;
-}
+//- (void)viewDidLoad {
+//    [super viewDidLoad];
+//
+//    // Do any additional setup after loading the view, typically from a nib.
+//}
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    // Do any additional setup after loading the view, typically from a nib.
-    
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.budgetLabel.text = [NSUserDefaults.standardUserDefaults stringForKey:@"Budget"];
+    [self.view setNeedsDisplay];
+    [self.dataHelper fetchAllSections];
 }
 
 - (void)setDataHelper:(DataHelper *)dataHelper {
@@ -40,13 +37,7 @@
         cvc.dataHelper = self.dataHelper;
     }
 }
-//-(void)sendBudgetBackVC:(UIViewController *)controller passText:(NSString *)budget {
-//    NSNumberFormatter *format = [[NSNumberFormatter alloc]init];
-//    format.numberStyle = NSNumberFormatterDecimalStyle;
-//    NSNumber *myNumber = [format numberFromString:budget];
-//    NSString *budgetString = [format stringFromNumber:myNumber];
-//
-//    self.budgetLabel.text = [NSString stringWithFormat:@"$%@", budgetString];
-//
-//}
+
+
+
 @end

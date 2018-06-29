@@ -15,6 +15,7 @@
 @property (nonatomic) RLMRealm *realm;
 @property (nonatomic) RLMArray<Section*>* sections;
 
+
 @end
 
 @implementation DataHelper
@@ -114,7 +115,12 @@
 }
 //
 - (RLMArray<Section*>*)fetchAllSections {
-    return self.sections;
+//    NSPredicate *pred = [NSPredicate predicateWithFormat:@"title != nil"];
+//    RLMResults *test = [Section objectsWithPredicate:pred];
+//    self.sectionTitles = [[RLMArray alloc]initWithObjectClassName:test];
+//    
+
+    return nil;
 }
 //
 - (void)reset {
