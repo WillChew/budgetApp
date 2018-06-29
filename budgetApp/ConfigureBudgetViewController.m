@@ -30,9 +30,8 @@
     // saving using DataHelper
     [self.dataHelper saveBudget:self.configureBudgetTextField.text];
     [self.navigationController popViewControllerAnimated:YES];
-    [self.presentingViewController dismissViewControllerAnimated:YES completion:^{
-        [super viewWillAppear:TRUE];
-    }];
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
     
     NSLog(@"%@", [[NSUserDefaults standardUserDefaults]dictionaryRepresentation]);
 
@@ -45,6 +44,10 @@
 
 -(void)setupKeyboard {
     self.configureBudgetTextField.keyboardType = UIKeyboardTypeDecimalPad;
+}
+
+- (void)dealloc {
+    
 }
 
 
