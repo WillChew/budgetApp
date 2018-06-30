@@ -22,10 +22,7 @@
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.budgetLabel.text = [self.dataHelper budgetRemaining];
-//    [self.dataHelper totalExpenses];
-//    [self.dataHelper fetchAllSections];
     [self.dataHelper sectionExpenseTotal:@"Entertainment"];
-    
 }
 
 - (void)setDataHelper:(DataHelper *)dataHelper {
@@ -45,7 +42,8 @@
 }
 - (IBAction)resetButtonPressed:(id)sender {
     [self.dataHelper reset];
-    self.budgetLabel.text = @"0";
+    self.budgetLabel.text = @"Enter Your Starting Budget";
+    [self performSegueWithIdentifier:@"ConfigureSegue" sender:self];
 }
 
 - (IBAction)configureButtonPressed:(id)sender {
@@ -57,10 +55,7 @@
     if([unwindSegue.sourceViewController isKindOfClass:[ConfigureBudgetViewController class]]) {
         self.navigationController.navigationBar.hidden = NO;
     }
-    
-    
-    
-    
+ 
 }
 
 
