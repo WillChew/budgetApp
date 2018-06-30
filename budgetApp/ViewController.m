@@ -16,18 +16,20 @@
 
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    [self setupPie];
-
+[super viewDidLoad];
 }
-
-
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.budgetLabel.text = [self.dataHelper budgetRemaining];
-     [self.pieView reloadData];
+    self.budgetLabel.text = [NSString stringWithFormat:@"$%@",[self.dataHelper budgetRemaining]];
+    [self setupPie];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
     
+    [self.pieView reloadData];
 }
 
 - (void)setDataHelper:(DataHelper *)dataHelper {
@@ -85,9 +87,7 @@
   return [self.sliceColors objectAtIndex:(index % self.sliceColors.count)];
 }
 
-- (NSString *)pieChart:(XYPieChart *)pieChart textForSliceAtIndex:(NSUInteger)index {
-    return [self.sliceLabelTitles objectAtIndex:index];
-}
+
 
 -(void)setupPie{
     self.slices = [[NSArray alloc]initWithObjects:@([self.dataHelper sectionExpenseTotal:@"Food"]), @([self.dataHelper sectionExpenseTotal:@"Entertainment"]), @([self.dataHelper sectionExpenseTotal:@"Utility"]), @([self.dataHelper sectionExpenseTotal:@"Transportation"]), @([self.dataHelper sectionExpenseTotal:@"Miscellaneous"]),nil];
@@ -106,7 +106,8 @@
     [self.pieView setAnimationSpeed:1.5];
     [self.pieView setLabelColor:[UIColor whiteColor]];
     [self.pieView setLabelShadowColor:[UIColor blackColor]];
-    [self.pieView showLabel:YES];
+    [self.pieView setShowLabel:YES];
+    [self.pieView setLabelFont:[UIFont systemFontOfSize:20]];
     [self.pieView setShowPercentage:YES];
     [self.pieView setPieBackgroundColor:[UIColor whiteColor]];
     

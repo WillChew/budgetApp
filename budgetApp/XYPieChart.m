@@ -232,7 +232,7 @@ static CGPathRef CGPathCreateArc(CGPoint center, CGFloat radius, CGFloat startAn
     {
         CATextLayer *textLayer = [[layer sublayers] objectAtIndex:0];
         [textLayer setHidden:!_showLabel];
-        if(!_showLabel) return;
+        if(!_showLabel) return; 
         NSString *label;
         if(_showPercentage)
             label = [NSString stringWithFormat:@"%0.0f", layer.percentage*100];

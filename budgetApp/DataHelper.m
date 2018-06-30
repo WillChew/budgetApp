@@ -40,20 +40,20 @@
     
     Section *food = self.sections[0];
     Expense *expense1 = [[Expense alloc] initWithName:@"Ice cream" amount:[[NSDecimalNumber alloc]initWithInt:10] description:@"Campo on King" date:[NSDate date]];
-    Expense *expense2 = [[Expense alloc] initWithName:@"Fruit" amount:[[NSDecimalNumber alloc]initWithInt:10] description:@"Fresh and Wild" date:[NSDate date]];
+    Expense *expense2 = [[Expense alloc] initWithName:@"Fruit" amount:[[NSDecimalNumber alloc]initWithInt:20] description:@"Fresh and Wild" date:[NSDate date]];
     
     Section *entertainment = self.sections[1];
-    Expense *expense3 = [[Expense alloc] initWithName:@"Movie night" amount:[[NSDecimalNumber alloc]initWithInt:10] description:@"Went to see Deadpool 2" date:[NSDate date]];
+    Expense *expense3 = [[Expense alloc] initWithName:@"Movie night" amount:[[NSDecimalNumber alloc]initWithInt:30] description:@"Went to see Deadpool 2" date:[NSDate date]];
     Expense *expense4 = [[Expense alloc] initWithName:@"Bar hopping with friends" amount:[[NSDecimalNumber alloc]initWithInt:10] description:@"Drinks are on me" date:[NSDate date]];
     
     Section *utility = self.sections[2];
-    Expense *expense5 = [[Expense alloc] initWithName:@"Internet bill" amount:[[NSDecimalNumber alloc]initWithInt:10] description:@"High speed fibre optic" date:[NSDate date]];
+    Expense *expense5 = [[Expense alloc] initWithName:@"Internet bill" amount:[[NSDecimalNumber alloc]initWithInt:40] description:@"High speed fibre optic" date:[NSDate date]];
     Expense *expense6 = [[Expense alloc] initWithName:@"Hydro bill" amount:[[NSDecimalNumber alloc]initWithInt:10] description:@"For the current month" date:[NSDate date]];
     
     
     Section *transportation = self.sections[3];
     Expense *expense7 = [[Expense alloc] initWithName:@"TTC" amount:[[NSDecimalNumber alloc]initWithInt:10] description:@"Monthly pass" date:[NSDate date]];
-    Expense *expense8 = [[Expense alloc] initWithName:@"Uber ride" amount:[[NSDecimalNumber alloc]initWithInt:10] description:@"For the trip downtown" date:[NSDate date]];
+    Expense *expense8 = [[Expense alloc] initWithName:@"Uber ride" amount:[[NSDecimalNumber alloc]initWithInt:20] description:@"For the trip downtown" date:[NSDate date]];
     
     
     Section *miscellaneous = self.sections[4];
