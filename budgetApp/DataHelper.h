@@ -30,7 +30,7 @@
 // 2. getBudget -> NSNumber
 - (void) saveBudget:(NSString*)amount;
 
-- (NSNumber *) totalExpenses;
+- (float) totalExpenses;
 
 - (NSString*) budgetRemaining;
 

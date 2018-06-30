@@ -32,7 +32,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     ViewController *vc = segue.destinationViewController;
     [self.dataHelper saveBudget:self.configureBudgetTextField.text];
-    vc.budgetLabel.text = [self.dataHelper budgetRemaining];
+    vc.budgetLabel.text = [NSString stringWithFormat:@"$%@",[self.dataHelper budgetRemaining]];
     NSLog(@"%@", [[NSUserDefaults standardUserDefaults]dictionaryRepresentation]);
     
 }

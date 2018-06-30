@@ -32,7 +32,7 @@
     
     NSNumberFormatter *decimalFormatter = [[NSNumberFormatter alloc] init];
     [decimalFormatter setNumberStyle: NSNumberFormatterCurrencyStyle];
-    self.amountLabel.text = [decimalFormatter stringFromNumber: expense.amount];
+    self.amountLabel.text = [NSString stringWithFormat:@"-%@",[decimalFormatter stringFromNumber: expense.amount]];
     
 }
 

@@ -115,12 +115,13 @@
 }
 //
 
-- (NSNumber *) totalExpenses {
+- (float) totalExpenses {
 //    NSNumber *sum = [numbers valueForKeyPath:@"@sum.number"];
 //    NSPredicate *pred = [NSPredicate predicateWithFormat:@"@sum.amount"];
     RLMResults <Expense*>*expenses = [Expense allObjects];
     NSNumber *num = [expenses sumOfProperty:@"amount"];
-    return num;
+    float num2 = [num floatValue];
+    return num2;
 }
 
 
@@ -140,22 +141,22 @@
 //
 //}
 
-- (NSString*) budgetRemaining {
-    NSInteger budgetAfterExpenses = [self getBudget] - [[self totalExpenses] integerValue];
-    NSDecimalNumber *decimal = [[NSDecimalNumber alloc]initWithInteger:budgetAfterExpenses];
-    return decimal.stringValue;
-}
-
-- (NSInteger) getBudget {
-    return (NSInteger)([NSUserDefaults.standardUserDefaults integerForKey:@"Budget"]);
-}
 
 - (void) saveBudget:(NSString*)amount {
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSNumber *budgetAmount = @([amount doubleValue]);
+    NSNumber *budgetAmount = @([amount floatValue]);
     [defaults setObject:budgetAmount forKey:@"Budget"];
-    
+}
+
+- (float) getBudget {
+    return [NSUserDefaults.standardUserDefaults floatForKey:@"Budget"];
+}
+
+- (NSString*) budgetRemaining {
+    float budgetAfterExpenses = [self getBudget] - [self totalExpenses];
+    NSString *floatString = [NSString stringWithFormat:@"%.02f",budgetAfterExpenses];
+    return floatString;
 }
 
 -(NSNumber*)sectionExpenseTotal:(NSString*)sectionTitle {
@@ -163,9 +164,9 @@
     RLMResults <Section*>*foodSection = [Section objectsWhere:@"title = %@", sectionTitle];
     NSArray *array = [foodSection valueForKeyPath:@"expenses.amount"];
     NSArray *array2 = [[NSArray alloc]initWithArray:array[0]];
-    double sum = 0;
+    float sum = 0;
     for (NSNumber *number in array2) {
-        sum += [number doubleValue];
+        sum += [number floatValue];
     }
     NSNumber *totalExpenseTotal = @(sum);
 
