@@ -47,7 +47,7 @@
         self.amountTextField.keyboardType = UIKeyboardTypeDecimalPad;
         
         
-        self.arrayOfSectionNames = @[@"Food", @"Entertainment", @"Transportation", @"Utilities", @"Miscellaneous"];
+        self.arrayOfSectionNames = @[@"Food", @"Entertainment", @"Transportation", @"Utility", @"Miscellaneous"];
         UIPickerView *pickerView = [[UIPickerView alloc]init];
         pickerView.delegate = self;
         self.sectionTextField.inputView = pickerView;
