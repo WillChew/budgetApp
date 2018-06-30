@@ -22,7 +22,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupKeyboard];
+
     // Do any additional setup after loading the view.
+}
+-(void)viewWillAppear:(BOOL)animated {
+    self.navigationController.navigationBar.hidden = YES;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

@@ -153,7 +153,7 @@
 - (void) saveBudget:(NSString*)amount {
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSNumber *budgetAmount = @([amount integerValue]);
+    NSNumber *budgetAmount = @([amount doubleValue]);
     [defaults setObject:budgetAmount forKey:@"Budget"];
     
 }

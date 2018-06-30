@@ -38,22 +38,24 @@
     if ([segue.identifier isEqualToString:@"ConfigureSegue"]) {
         ConfigureBudgetViewController *cvc = segue.destinationViewController;
         cvc.dataHelper = self.dataHelper;
+        self.navigationController.navigationBar.hidden = YES;
         
         
     }
 }
 - (IBAction)resetButtonPressed:(id)sender {
     [self.dataHelper reset];
+    self.budgetLabel.text = @"0";
 }
 
 - (IBAction)configureButtonPressed:(id)sender {
-//    [self.navigationItem setRightBarButtonItem:nil];
-}
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+    }
 
 
 - (IBAction)unwindToMainMenu:(UIStoryboardSegue *)unwindSegue {
     if([unwindSegue.sourceViewController isKindOfClass:[ConfigureBudgetViewController class]]) {
-        ConfigureBudgetViewController *cvc = unwindSegue.sourceViewController;
+        self.navigationController.navigationBar.hidden = NO;
     }
     
     

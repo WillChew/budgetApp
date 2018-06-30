@@ -21,7 +21,6 @@
 
 - (void)reset;
 
--(NSNumber*)foodTotal;
 -(NSNumber*)sectionExpenseTotal:(NSString*)sectionTitle;
 
 
