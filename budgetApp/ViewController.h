@@ -12,6 +12,7 @@
 
 @interface ViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *budgetLabel;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *configureButton;
 @property (nonatomic) DataHelper *dataHelper;
 
 @end

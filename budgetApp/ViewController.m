@@ -12,6 +12,7 @@
 
 @implementation ViewController
 
+
 //- (void)viewDidLoad {
 //    [super viewDidLoad];
 //
@@ -23,6 +24,8 @@
     self.budgetLabel.text = [self.dataHelper budgetRemaining];
 //    [self.dataHelper totalExpenses];
 //    [self.dataHelper fetchAllSections];
+    [self.dataHelper sectionExpenseTotal:@"Entertainment"];
+    
 }
 
 - (void)setDataHelper:(DataHelper *)dataHelper {
@@ -35,10 +38,16 @@
     if ([segue.identifier isEqualToString:@"ConfigureSegue"]) {
         ConfigureBudgetViewController *cvc = segue.destinationViewController;
         cvc.dataHelper = self.dataHelper;
+        
+        
     }
 }
 - (IBAction)resetButtonPressed:(id)sender {
     [self.dataHelper reset];
+}
+
+- (IBAction)configureButtonPressed:(id)sender {
+//    [self.navigationItem setRightBarButtonItem:nil];
 }
 
 

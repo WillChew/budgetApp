@@ -8,10 +8,9 @@
 
 #import "RLMObject.h"
 #import "Realm/Realm.h"
-
 #import "Expense.h"
 
-RLM_ARRAY_TYPE(Section)
+
 @interface Section : RLMObject
 
 @property RLMArray<Expense *><Expense>*expenses;

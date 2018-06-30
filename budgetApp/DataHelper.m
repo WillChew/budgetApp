@@ -158,5 +158,19 @@
     
 }
 
+-(NSNumber*)sectionExpenseTotal:(NSString*)sectionTitle {
+    
+    RLMResults <Section*>*foodSection = [Section objectsWhere:@"title = %@", sectionTitle];
+    NSArray *array = [foodSection valueForKeyPath:@"expenses.amount"];
+    NSArray *array2 = [[NSArray alloc]initWithArray:array[0]];
+    double sum = 0;
+    for (NSNumber *number in array2) {
+        sum += [number doubleValue];
+    }
+    NSNumber *totalExpenseTotal = @(sum);
+
+    return totalExpenseTotal;
+}
+
 
 @end
