@@ -65,6 +65,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03D91B2820E8089A002EB4C8 /* PieChart */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PieChart;
+			sourceTree = "<group>";
+		};
 		2B2581E529E4A4F5503E17EC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +110,7 @@
 		C3838AAE20E402B60016951E /* budgetApp */ = {
 			isa = PBXGroup;
 			children = (
+				03D91B2820E8089A002EB4C8 /* PieChart */,
 				C3838AAF20E402B60016951E /* AppDelegate.h */,
 				C3838AB020E402B60016951E /* AppDelegate.m */,
 				0375151320E5AA85002F27F1 /* DataHelper.h */,

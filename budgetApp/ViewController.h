@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *budgetLabel;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *configureButton;
 @property (nonatomic) DataHelper *dataHelper;
+@property (weak, nonatomic) IBOutlet UIButton *resetBudgetButton;
 
 @end
 

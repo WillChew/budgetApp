@@ -7,5 +7,7 @@ target 'budgetApp' do
 
   # Pods for budgetApp
   pod 'Realm'
+  pod 'MaterialComponents/Buttons'
+  pod 'MaterialComponents/Buttons+ButtonThemer'
 
 end

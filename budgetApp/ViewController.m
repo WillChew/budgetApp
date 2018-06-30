@@ -8,21 +8,43 @@
 
 #import "ViewController.h"
 #import "ConfigureBudgetViewController.h"
+#import "MaterialButtons.h"
+#import "MaterialButtons+ButtonThemer.h"
+
+
 
 
 @implementation ViewController
 
 
-//- (void)viewDidLoad {
-//    [super viewDidLoad];
+- (void)viewDidLoad {
+    [super viewDidLoad];
+
+    
+    // Style Reset Button
+    self.resetBudgetButton.layer.shadowColor = [UIColor.lightGrayColor CGColor];
+    self.resetBudgetButton.layer.shadowOffset = CGSizeZero;
+    self.resetBudgetButton.layer.shadowRadius = 10.0;
+    self.resetBudgetButton.layer.shadowOpacity = 0.20;
+    self.resetBudgetButton.layer.cornerRadius = 10.0;
+    
+    
+//    // Create Test Material Button
+//    MDCButton *button = [[MDCButton alloc] initWithFrame:CGRectMake(100, 100, 50, 50)];
 //
-//    // Do any additional setup after loading the view, typically from a nib.
-//}
+//    //     Themed as a text button:
+//    MDCButtonScheme *buttonScheme = [[MDCButtonScheme alloc] init];
+//
+//    [MDCTextButtonThemer applyScheme:buttonScheme toButton:button];
+}
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.budgetLabel.text = [self.dataHelper budgetRemaining];
     [self.dataHelper sectionExpenseTotal:@"Entertainment"];
+    
+
+    
 }
 
 - (void)setDataHelper:(DataHelper *)dataHelper {
