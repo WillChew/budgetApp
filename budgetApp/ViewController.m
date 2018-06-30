@@ -123,7 +123,7 @@
     [self.pieView setAnimationSpeed:1.5];
     [self.pieView setLabelColor:[UIColor whiteColor]];
     [self.pieView setLabelShadowColor:[UIColor blackColor]];
-    [self.pieView showLabel:YES];
+    [self.pieView setShowLabel:YES];
     [self.pieView setShowPercentage:YES];
     [self.pieView setPieBackgroundColor:[UIColor whiteColor]];
     
