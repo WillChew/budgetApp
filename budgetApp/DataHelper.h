@@ -21,7 +21,7 @@
 
 - (void)reset;
 
--(NSNumber*)sectionExpenseTotal:(NSString*)sectionTitle;
+-(float)sectionExpenseTotal:(NSString*)sectionTitle;
 
 
 // 2 methods

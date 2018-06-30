@@ -73,7 +73,7 @@
 
 - (RLMResults<Section*> *)createSectionObjects {
     RLMResults<Section*> *sections = [Section allObjects];
-    if (sections.count == 0) {
+    if (sections.count < 5) {
         Section *food = [[Section alloc] init];
         food.title = @"Food";
         Section *entertainment = [[Section alloc] init];
@@ -159,7 +159,7 @@
     return floatString;
 }
 
--(NSNumber*)sectionExpenseTotal:(NSString*)sectionTitle {
+- (float)sectionExpenseTotal:(NSString*)sectionTitle {
     
     RLMResults <Section*>*foodSection = [Section objectsWhere:@"title = %@", sectionTitle];
     NSArray *array = [foodSection valueForKeyPath:@"expenses.amount"];
@@ -168,7 +168,7 @@
     for (NSNumber *number in array2) {
         sum += [number floatValue];
     }
-    NSNumber *totalExpenseTotal = @(sum);
+    float totalExpenseTotal = @(sum).floatValue;
 
     return totalExpenseTotal;
 }

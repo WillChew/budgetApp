@@ -9,7 +9,7 @@
 #import "AddTxTableViewController.h"
 #import "Expense.h"
 
-@interface AddTxTableViewController ()
+@interface AddTxTableViewController () <UIPickerViewDelegate, UIPickerViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *amountTextField;
@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *dateTextField;
 @property (weak, nonatomic) IBOutlet UITextField *sectionTextField;
 @property (nonatomic) NSDate *date;
+@property (nonatomic,strong) NSArray *arrayOfSectionNames;
 
 
 @end
@@ -45,6 +46,12 @@
         
         self.amountTextField.keyboardType = UIKeyboardTypeDecimalPad;
         
+        
+        self.arrayOfSectionNames = @[@"Food", @"Entertainment", @"Transportation", @"Utilities", @"Miscellaneous"];
+        UIPickerView *pickerView = [[UIPickerView alloc]init];
+        pickerView.delegate = self;
+        self.sectionTextField.inputView = pickerView;
+        
     }
     -(void)updateTextField:(id)sender {
         UIDatePicker *picker = (UIDatePicker*)self.dateTextField.inputView;
@@ -71,9 +78,7 @@
     
     return 5;
 }
-    
-    
-    
+
 - (IBAction)submitButton:(id)sender {
     NSLog(@"%@", self.dateTextField.description);
     NSNumberFormatter *format = [[NSNumberFormatter alloc]init];
@@ -88,12 +93,26 @@
     NSLog(@"%@", newExpense.date);
     [self.dataHelper saveExpense:newExpense withSection:self.sectionTextField.text];
     
-    [self dismissViewControllerAnimated:YES completion:^{
-    }];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
-    
-   
-    
-    
-    
-    @end
+
+
+- (NSInteger)numberOfComponentsInPickerView:(nonnull UIPickerView *)pickerView {
+    return 1;
+}
+
+- (NSInteger)pickerView:(nonnull UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    return self.arrayOfSectionNames.count;
+}
+
+-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    return self.arrayOfSectionNames[row];
+}
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    self.sectionTextField.text = self.arrayOfSectionNames[row];
+}
+
+
+
+
+@end
