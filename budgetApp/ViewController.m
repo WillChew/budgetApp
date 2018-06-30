@@ -55,7 +55,6 @@
     if([unwindSegue.sourceViewController isKindOfClass:[ConfigureBudgetViewController class]]) {
         self.navigationController.navigationBar.hidden = NO;
     }
- 
 }
 
 

@@ -31,7 +31,7 @@
     if (self) {
         self.realm = [RLMRealm defaultRealm];
         self.sections = (RLMArray <Section*>*)[self createSectionObjects];
-//        [self createTestObjects];
+        [self createTestObjects];
     }
     return self;
 }
@@ -136,10 +136,6 @@
     [self.realm commitWriteTransaction];
     
 }
-//
-//- (void)deleteExpense:(Expense *)expense {
-//
-//}
 
 
 - (void) saveBudget:(NSString*)amount {
@@ -169,8 +165,14 @@
         sum += [number floatValue];
     }
     float totalExpenseTotal = @(sum).floatValue;
-
     return totalExpenseTotal;
+}
+
+- (void)deleteAtIndexPath:(NSInteger)indexPath {
+    RLMResults <Expense*>*expenses = [Expense allObjects];
+    [self.realm beginWriteTransaction];
+    [self.realm deleteObject:[expenses objectAtIndex: indexPath]];
+    [self.realm commitWriteTransaction];
 }
 
 
