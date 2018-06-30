@@ -9,17 +9,17 @@
 #import "TransactionViewController.h"
 #import "Expense.h"
 #import "TransactionTableViewCell.h"
+#import "AddTxTableViewController.h"
+#import "Section.h"
 
 @interface TransactionViewController () <UITableViewDataSource, UITableViewDelegate>
 
+
 @property (weak, nonatomic) IBOutlet UITableView *transactionTableView;
 
-@property (nonatomic, strong) NSArray<NSMutableArray*> *transactionArray;
-@property (nonatomic, strong) NSMutableArray<Expense*> *foodSectionArray;
-@property (nonatomic, strong) NSMutableArray<Expense*> *entertainmentSectionArray;
-@property (nonatomic, strong) NSMutableArray<Expense*> *transportationSectionArray;
-@property (nonatomic, strong) NSMutableArray<Expense*> *livingExpensesSectionArray;
-@property (nonatomic, strong) NSMutableArray<Expense*> *miscellaneousSectionArray;
+@property (nonatomic) RLMArray<Section*>* sections;
+
+
 
 //@property (nonatomic, strong) Expense *expense;
 
@@ -31,23 +31,29 @@
 
 @implementation TransactionViewController
 
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    if (self = [super initWithCoder:aDecoder]) {
+        
+    }
+    return self;
+}
+
+- (void)setDataHelper:(DataHelper *)dataHelper {
+    
+    _dataHelper = dataHelper;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    // set the sections property to the queried sections from data helper
+    self.sections = [self.dataHelper fetchAllSections];
     
-    self.foodSectionArray = [[NSMutableArray alloc]init];
 
-    self.entertainmentSectionArray = [[NSMutableArray alloc]init];
-    self.transportationSectionArray = [[NSMutableArray alloc]init];
-    self.livingExpensesSectionArray = [[NSMutableArray alloc]init];
-    self.miscellaneousSectionArray = [[NSMutableArray alloc]init];
-    
-    self.transactionArray = @[
-                              self.foodSectionArray,
-                              self.entertainmentSectionArray,
-                              self.livingExpensesSectionArray,
-                              self.miscellaneousSectionArray,
-                              self.miscellaneousSectionArray,
-                              ];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.transactionTableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -66,24 +72,44 @@
 */
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return self.transactionArray.count;
+    return self.sections.count;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.transactionArray[section].count;
+    //given a particular section, what is the number of rows within that section
+    Section *givenSection = self.sections[section];
+    return givenSection.expenses.count;
+    
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     TransactionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TransactionCell" forIndexPath:indexPath];
-    NSArray *sectionArray = self.transactionArray[indexPath.section];
-    Expense *expense = sectionArray[indexPath.row];
+    Section *section = self.sections[indexPath.section];
+    Expense *expense = section.expenses[indexPath.row];
     [cell configureCellWithExpense:expense];
     return cell;
-    
 }
 
 
 
+// prepareForSegue and pass the AddTxVC the DataHelper instance self.dataHelper
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"GoToAdd"]) {
+        AddTxTableViewController *addTxVC = segue.destinationViewController;
+        addTxVC.dataHelper = self.dataHelper;
+    }
+}
+
+-(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+-(void)tableView:(UITableView*)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [self.dataHelper deleteAtIndexPath:indexPath.row];
+        [tableView reloadData];
+    }
+}
 
 
 @end

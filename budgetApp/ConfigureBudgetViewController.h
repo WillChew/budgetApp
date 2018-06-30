@@ -7,12 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DataHelper.h"
 
-@protocol ConfigureBudgetDelegate
--(void)sendBudgetBackVC:(UIViewController*)controller passText:(NSString*)budget;
-@end
+
+
+
 
 @interface ConfigureBudgetViewController : UIViewController
-@property (nonatomic,weak)id<ConfigureBudgetDelegate>delegate;
+
+@property (nonatomic, strong) DataHelper *dataHelper;
+
+
 
 @end

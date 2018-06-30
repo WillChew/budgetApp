@@ -7,10 +7,13 @@
 //
 
 #import "ConfigureBudgetViewController.h"
+#import "ViewController.h"
 
 @interface ConfigureBudgetViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *budgetLabel;
 @property (weak, nonatomic) IBOutlet UITextField *configureBudgetTextField;
+
+
 
 @end
 
@@ -19,33 +22,30 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupKeyboard];
+
     // Do any additional setup after loading the view.
 }
+-(void)viewWillAppear:(BOOL)animated {
+    self.navigationController.navigationBar.hidden = YES;
+}
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    ViewController *vc = segue.destinationViewController;
+    [self.dataHelper saveBudget:self.configureBudgetTextField.text];
+    vc.budgetLabel.text = [NSString stringWithFormat:@"$%@",[self.dataHelper budgetRemaining]];
+    NSLog(@"%@", [[NSUserDefaults standardUserDefaults]dictionaryRepresentation]);
+    
 }
-- (IBAction)submitButtonPressed:(UIButton *)sender {
-    [self.delegate sendBudgetBackVC:self passText:self.configureBudgetTextField.text];
-    [self.navigationController popViewControllerAnimated:YES];
-    [self dismissViewControllerAnimated:YES completion:nil];
- 
-}
+
+
 
 -(void)setupKeyboard {
-    self.configureBudgetTextField.keyboardType = UIKeyboardTypeNumberPad;
+    self.configureBudgetTextField.keyboardType = UIKeyboardTypeDecimalPad;
+}
+- (void)dealloc {
+    
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 
 

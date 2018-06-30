@@ -1,17 +1,16 @@
 //
-//  TransactionViewController.h
+//  AddTxTableViewController.h
 //  budgetApp
 //
-//  Created by Erik Goossens on 2018-06-27.
+//  Created by Will Chew on 2018-06-28.
 //  Copyright © 2018 Erik Goossens. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import "DataHelper.h"
 
-@interface TransactionViewController : UIViewController
+@interface AddTxTableViewController : UITableViewController
 
 @property (nonatomic, strong) DataHelper *dataHelper;
-
 
 @end
