@@ -98,7 +98,7 @@
                                 <rect key="frame" x="162.5" y="363" width="49" height="30"/>
                                 <state key="normal" title="Submit"/>
                                 <connections>
-                                    <action selector="submitButtonPressed:" destination="GAC-Po-W7j" eventType="touchUpInside" id="TcH-rP-JTs"/>
+                                    <segue destination="vgg-9B-1UW" kind="unwind" identifier="submitPressed" unwindAction="unwindToMainMenu:" id="JX2-91-0Pc"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -119,6 +119,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e2A-ts-IQ7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="vgg-9B-1UW" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2380" y="-723"/>
         </scene>

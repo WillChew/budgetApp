@@ -25,19 +25,12 @@
     // Do any additional setup after loading the view.
 }
 
-- (IBAction)submitButtonPressed:(UIButton *)sender {
-
-    // saving using DataHelper
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    ViewController *vc = segue.destinationViewController;
     [self.dataHelper saveBudget:self.configureBudgetTextField.text];
-    [self.navigationController popViewControllerAnimated:YES];
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
-    
+    vc.budgetLabel.text = [self.dataHelper budgetRemaining];
     NSLog(@"%@", [[NSUserDefaults standardUserDefaults]dictionaryRepresentation]);
-
-
     
- 
 }
 
 
@@ -45,7 +38,6 @@
 -(void)setupKeyboard {
     self.configureBudgetTextField.keyboardType = UIKeyboardTypeDecimalPad;
 }
-
 - (void)dealloc {
     
 }
