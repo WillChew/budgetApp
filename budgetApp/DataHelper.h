@@ -23,6 +23,8 @@
 
 -(float)sectionExpenseTotal:(NSString*)sectionTitle;
 
+- (void)deleteAtIndexPath:(NSInteger)indexPath;
+
 
 // 2 methods
 

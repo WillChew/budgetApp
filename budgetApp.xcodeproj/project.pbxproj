@@ -10,6 +10,9 @@
 		0375151520E5AA85002F27F1 /* DataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0375151420E5AA85002F27F1 /* DataHelper.m */; };
 		03F224D020E554E600B354D5 /* Section.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F224CF20E554E600B354D5 /* Section.m */; };
 		21295F5120E4208700747E37 /* Expense.m in Sources */ = {isa = PBXBuildFile; fileRef = 21295F5020E4208700747E37 /* Expense.m */; };
+		2167430120E8150700289378 /* XYPieChart in Resources */ = {isa = PBXBuildFile; fileRef = 2167430020E8150700289378 /* XYPieChart */; };
+		2167430320E8159D00289378 /* XYPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 2167430220E8159C00289378 /* XYPieChart.m */; };
+		2167430620E81AD400289378 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2167430520E81AD400289378 /* QuartzCore.framework */; };
 		21B1E43F20E592FA0004585F /* AddTxTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B1E43E20E592FA0004585F /* AddTxTableViewController.m */; };
 		AC8EE5D4F6590FC3CBAF1058 /* libPods-budgetApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EE4051E598A102449C360195 /* libPods-budgetApp.a */; };
 		C3838AB120E402B60016951E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C3838AB020E402B60016951E /* AppDelegate.m */; };
@@ -30,6 +33,10 @@
 		03F224CF20E554E600B354D5 /* Section.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Section.m; sourceTree = "<group>"; };
 		21295F4F20E4208700747E37 /* Expense.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Expense.h; sourceTree = "<group>"; };
 		21295F5020E4208700747E37 /* Expense.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Expense.m; sourceTree = "<group>"; };
+		2167430020E8150700289378 /* XYPieChart */ = {isa = PBXFileReference; lastKnownFileType = folder; path = XYPieChart; sourceTree = "<group>"; };
+		2167430220E8159C00289378 /* XYPieChart.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYPieChart.m; sourceTree = "<group>"; };
+		2167430420E8159E00289378 /* XYPieChart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYPieChart.h; sourceTree = "<group>"; };
+		2167430520E81AD400289378 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		21B1E43D20E592FA0004585F /* AddTxTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddTxTableViewController.h; sourceTree = "<group>"; };
 		21B1E43E20E592FA0004585F /* AddTxTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddTxTableViewController.m; sourceTree = "<group>"; };
 		50FF1B485F214EF01411E0EB /* Pods-budgetApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-budgetApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-budgetApp/Pods-budgetApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -58,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2167430620E81AD400289378 /* QuartzCore.framework in Frameworks */,
 				AC8EE5D4F6590FC3CBAF1058 /* libPods-budgetApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -75,6 +83,7 @@
 		2B2581E529E4A4F5503E17EC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2167430520E81AD400289378 /* QuartzCore.framework */,
 				EE4051E598A102449C360195 /* libPods-budgetApp.a */,
 			);
 			name = Frameworks;
@@ -92,6 +101,7 @@
 		C3838AA320E402B60016951E = {
 			isa = PBXGroup;
 			children = (
+				2167430020E8150700289378 /* XYPieChart */,
 				C3838AAE20E402B60016951E /* budgetApp */,
 				C3838AAD20E402B60016951E /* Products */,
 				399BF1D7CD6BB6570290B127 /* Pods */,
@@ -199,6 +209,7 @@
 				C3838ABC20E402B90016951E /* LaunchScreen.storyboard in Resources */,
 				C3838AB920E402B90016951E /* Assets.xcassets in Resources */,
 				C3838AB720E402B60016951E /* Main.storyboard in Resources */,
+				2167430120E8150700289378 /* XYPieChart in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,6 +243,7 @@
 			files = (
 				21295F5120E4208700747E37 /* Expense.m in Sources */,
 				C3838ACA20E40B4B0016951E /* TransactionTableViewCell.m in Sources */,
+				2167430320E8159D00289378 /* XYPieChart.m in Sources */,
 				C3838AB420E402B60016951E /* ViewController.m in Sources */,
 				21B1E43F20E592FA0004585F /* AddTxTableViewController.m in Sources */,
 				C3838ACD20E40E880016951E /* ConfigureBudgetViewController.m in Sources */,
