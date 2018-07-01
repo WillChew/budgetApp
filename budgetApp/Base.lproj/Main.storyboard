@@ -108,7 +108,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Budget Info" largeTitleDisplayMode="always" id="2YK-bT-KC3">
-                        <barButtonItem key="leftBarButtonItem" title="Reset" id="hJq-ge-AGb"/>
+                        <barButtonItem key="leftBarButtonItem" title="Reset" id="hJq-ge-AGb">
+                            <connections>
+                                <action selector="resetButtonPressed:" destination="BYZ-38-t0r" id="QWX-BQ-nUp"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="p8L-6m-yjh">
                             <connections>
                                 <action selector="configureButtonPressed:" destination="BYZ-38-t0r" id="peK-tv-vMJ"/>
@@ -433,7 +437,9 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c3o-0A-DxP">
                                                     <rect key="frame" x="326" y="0.0" width="68" height="43"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                                    <state key="normal" title="Submit"/>
+                                                    <state key="normal" title="Submit">
+                                                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    </state>
                                                     <connections>
                                                         <action selector="submitButton:" destination="10Q-lL-jSy" eventType="touchUpInside" id="Xik-uv-BPU"/>
                                                     </connections>
@@ -441,7 +447,9 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VAU-iN-QPf">
                                                     <rect key="frame" x="20" y="0.0" width="70" height="43"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                                    <state key="normal" title="Cancel"/>
+                                                    <state key="normal" title="Cancel">
+                                                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    </state>
                                                     <connections>
                                                         <action selector="cancelButtonPressed:" destination="10Q-lL-jSy" eventType="touchUpInside" id="aeD-VA-nWz"/>
                                                     </connections>
