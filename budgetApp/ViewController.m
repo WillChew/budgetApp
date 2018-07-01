@@ -18,7 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor colorWithGradientStyle:UIGradientStyleTopToBottom withFrame:self.view.bounds andColors:@[[UIColor flatBlackColor], [UIColor flatGrayColor]]];
+    self.view.backgroundColor = [UIColor colorWithGradientStyle:UIGradientStyleTopToBottom withFrame:self.view.bounds andColors:@[[UIColor flatBlackColor], [UIColor flatBlackColorDark]]];
     self.foodLabel.textColor = [UIColor flatPurpleColor];
     self.utilityLabel.textColor = [UIColor flatBlueColor];
     self.entertainmentLabel.textColor = [UIColor flatPowderBlueColor];
@@ -116,7 +116,7 @@
     [self.pieView setShowLabel:YES];
     [self.pieView setLabelFont:[UIFont systemFontOfSize:20]];
     [self.pieView setShowPercentage:YES];
-    [self.pieView setPieBackgroundColor:[UIColor whiteColor]];
+    [self.pieView setPieBackgroundColor:[UIColor clearColor]];
     
     [self.pieView setPieCenter:CGPointMake(self.pieView.bounds.origin.x + viewWidth, self.pieView.bounds.origin.y + viewHeight)];
     [self.pieView reloadData];
