@@ -18,6 +18,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *sectionTextField;
 @property (nonatomic) NSDate *date;
 @property (nonatomic,strong) NSArray *arrayOfSectionNames;
+@property (weak, nonatomic) IBOutlet UIButton *submitButton;
+@property (weak, nonatomic) IBOutlet UIButton *cancelButton;
 
 
 @end
@@ -30,6 +32,10 @@
     
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(viewTapped:)];
     [self.view addGestureRecognizer:tapGesture];
+    
+    self.submitButton.backgroundColor = UIColor.clearColor;
+    self.cancelButton.backgroundColor = UIColor.clearColor;
+    
     
 }
     -(void)viewTapped:(UITapGestureRecognizer*)sender {

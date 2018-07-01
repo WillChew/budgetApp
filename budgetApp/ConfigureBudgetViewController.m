@@ -12,6 +12,8 @@
 @interface ConfigureBudgetViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *budgetLabel;
 @property (weak, nonatomic) IBOutlet UITextField *configureBudgetTextField;
+@property (weak, nonatomic) IBOutlet UIView *containerView;
+@property (weak, nonatomic) IBOutlet UIButton *submitButton;
 
 
 
@@ -24,6 +26,9 @@
     [self setupKeyboard];
 
     // Do any additional setup after loading the view.
+    self.submitButton.backgroundColor = UIColor.clearColor;
+    self.containerView.layer.cornerRadius = 25;
+    
 }
 -(void)viewWillAppear:(BOOL)animated {
     self.navigationController.navigationBar.hidden = YES;
