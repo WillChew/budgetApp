@@ -83,13 +83,18 @@
 }
 
 - (IBAction)submitButton:(id)sender {
-    NSLog(@"%@", self.dateTextField.description);
+    
     NSNumberFormatter *format = [[NSNumberFormatter alloc]init];
     format.numberStyle = NSNumberFormatterDecimalStyle;
-    NSNumber *amountNumber = [format numberFromString:self.amountTextField.text];
-    if (amountNumber == nil) {
-        amountNumber = 0;
+    if ([self.amountTextField.text isEqualToString: @""]) {
+        self.amountTextField.text = @"0";
     }
+    NSNumber *amountNumber = [format numberFromString:self.amountTextField.text];
+  
+    if (self.sectionTextField.text.length == 0 ) {
+        self.sectionTextField.text = @"Miscellaneous";
+    }
+    
     NSString *amountString = [format stringFromNumber:amountNumber];
     NSDecimalNumber *numberDecimal = [NSDecimalNumber decimalNumberWithString:amountString];
     

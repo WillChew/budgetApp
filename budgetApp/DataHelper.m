@@ -31,7 +31,7 @@
     if (self) {
         self.realm = [RLMRealm defaultRealm];
         self.sections = (RLMArray <Section*>*)[self createSectionObjects];
-//        [self createTestObjects];
+        [self createTestObjects];
     }
     return self;
 }
