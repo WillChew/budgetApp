@@ -56,7 +56,7 @@
 }
 - (IBAction)resetButtonPressed:(id)sender {
     [self.dataHelper reset];
-    self.budgetLabel.text = @"Enter Your Starting Budget";
+    self.budgetLabel.text = @"Enter Your Budget";
     [self performSegueWithIdentifier:@"ConfigureSegue" sender:self];
 }
 
