@@ -10,7 +10,6 @@
 		0375151520E5AA85002F27F1 /* DataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0375151420E5AA85002F27F1 /* DataHelper.m */; };
 		03F224D020E554E600B354D5 /* Section.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F224CF20E554E600B354D5 /* Section.m */; };
 		21295F5120E4208700747E37 /* Expense.m in Sources */ = {isa = PBXBuildFile; fileRef = 21295F5020E4208700747E37 /* Expense.m */; };
-		2167430120E8150700289378 /* XYPieChart in Resources */ = {isa = PBXBuildFile; fileRef = 2167430020E8150700289378 /* XYPieChart */; };
 		2167430320E8159D00289378 /* XYPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 2167430220E8159C00289378 /* XYPieChart.m */; };
 		2167430620E81AD400289378 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2167430520E81AD400289378 /* QuartzCore.framework */; };
 		21B1E43F20E592FA0004585F /* AddTxTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B1E43E20E592FA0004585F /* AddTxTableViewController.m */; };
@@ -33,7 +32,6 @@
 		03F224CF20E554E600B354D5 /* Section.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Section.m; sourceTree = "<group>"; };
 		21295F4F20E4208700747E37 /* Expense.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Expense.h; sourceTree = "<group>"; };
 		21295F5020E4208700747E37 /* Expense.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Expense.m; sourceTree = "<group>"; };
-		2167430020E8150700289378 /* XYPieChart */ = {isa = PBXFileReference; lastKnownFileType = folder; path = XYPieChart; sourceTree = "<group>"; };
 		2167430220E8159C00289378 /* XYPieChart.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYPieChart.m; sourceTree = "<group>"; };
 		2167430420E8159E00289378 /* XYPieChart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYPieChart.h; sourceTree = "<group>"; };
 		2167430520E81AD400289378 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -94,7 +92,6 @@
 		C3838AA320E402B60016951E = {
 			isa = PBXGroup;
 			children = (
-				2167430020E8150700289378 /* XYPieChart */,
 				C3838AAE20E402B60016951E /* budgetApp */,
 				C3838AAD20E402B60016951E /* Products */,
 				399BF1D7CD6BB6570290B127 /* Pods */,
@@ -203,7 +200,6 @@
 				C3838ABC20E402B90016951E /* LaunchScreen.storyboard in Resources */,
 				C3838AB920E402B90016951E /* Assets.xcassets in Resources */,
 				C3838AB720E402B60016951E /* Main.storyboard in Resources */,
-				2167430120E8150700289378 /* XYPieChart in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
