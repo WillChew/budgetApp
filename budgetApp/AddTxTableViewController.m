@@ -76,7 +76,10 @@
     
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 5;
+    return 6;
+}
+- (IBAction)cancelButtonPressed:(UIButton *)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)submitButton:(id)sender {
@@ -84,10 +87,14 @@
     NSNumberFormatter *format = [[NSNumberFormatter alloc]init];
     format.numberStyle = NSNumberFormatterDecimalStyle;
     NSNumber *amountNumber = [format numberFromString:self.amountTextField.text];
+    if (amountNumber == nil) {
+        amountNumber = 0;
+    }
     NSString *amountString = [format stringFromNumber:amountNumber];
     NSDecimalNumber *numberDecimal = [NSDecimalNumber decimalNumberWithString:amountString];
     
-    NSLog(@"%@", self.date);
+
+    
     
     Expense *newExpense = [[Expense alloc]initWithName:self.nameTextField.text amount:numberDecimal description:self.descriptionTextField.text date:self.date];
     NSLog(@"%@", newExpense.date);
@@ -109,9 +116,12 @@
     return self.arrayOfSectionNames[row];
 }
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    if (self.sectionTextField.text != self.sectionTextField.text ) {
+        self.sectionTextField.text = @"Miscellaneous";
+    } else {
     self.sectionTextField.text = self.arrayOfSectionNames[row];
 }
-
+}
 
 
 
