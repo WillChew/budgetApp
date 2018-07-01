@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sbv-zq-t52">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sbv-zq-t52">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -20,9 +20,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Remaining:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Bg-Yh-r1K">
-                                <rect key="frame" x="40" y="84" width="334" height="45.666666666666657"/>
+                                <rect key="frame" x="40" y="84" width="334" height="46"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="38"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rBw-3T-gJL" customClass="XYPieChart">
@@ -88,9 +88,9 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spending Breakdown (%)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C17-pg-Fkh">
-                                <rect key="frame" x="60" y="149" width="293" height="52"/>
+                                <rect key="frame" x="60" y="150" width="293" height="51"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -133,7 +133,13 @@
                     <connections>
                         <outlet property="budgetLabel" destination="2Bg-Yh-r1K" id="3RK-H1-Vls"/>
                         <outlet property="configureButton" destination="p8L-6m-yjh" id="Tp7-MQ-GSj"/>
+                        <outlet property="entertainmentLabel" destination="C93-7j-CuX" id="KJs-LC-ufg"/>
+                        <outlet property="foodLabel" destination="drB-yT-cVF" id="7KI-Au-Kyl"/>
+                        <outlet property="legendLabel" destination="d8v-aq-M3f" id="KcK-pN-XSY"/>
+                        <outlet property="miscellaneousLabel" destination="FZc-Uo-X4P" id="v6s-OO-pVh"/>
                         <outlet property="pieView" destination="rBw-3T-gJL" id="5hZ-26-svL"/>
+                        <outlet property="transportationLabel" destination="KrV-d8-sva" id="24G-7I-UAE"/>
+                        <outlet property="utilityLabel" destination="yaY-QP-6AZ" id="Asf-k1-A9W"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

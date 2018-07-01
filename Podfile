@@ -7,5 +7,5 @@ target 'budgetApp' do
 
   # Pods for budgetApp
   pod 'Realm'
-
+  pod 'ChameleonFramework', '~> 2.1'
 end

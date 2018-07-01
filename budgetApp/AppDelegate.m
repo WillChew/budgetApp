@@ -11,6 +11,7 @@
 #import "DataHelper.h"
 #import "ViewController.h"
 #import "TransactionViewController.h"
+#import "Chameleon.h"
 
 
 
@@ -27,6 +28,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [Chameleon setGlobalThemeUsingPrimaryColor:[UIColor flatBlackColor] withContentStyle:UIContentStyleLight];
     [self setupDataHelper];
     return YES;
 }

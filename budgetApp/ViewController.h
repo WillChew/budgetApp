@@ -19,6 +19,12 @@
 @property (nonatomic,strong) NSArray *slices;
 @property (nonatomic,strong) NSArray *sliceColors;
 @property (nonatomic,strong) NSArray *sliceLabelTitles;
+@property (weak, nonatomic) IBOutlet UILabel *foodLabel;
+@property (weak, nonatomic) IBOutlet UILabel *utilityLabel;
+@property (weak, nonatomic) IBOutlet UILabel *entertainmentLabel;
+@property (weak, nonatomic) IBOutlet UILabel *transportationLabel;
+@property (weak, nonatomic) IBOutlet UILabel *miscellaneousLabel;
+@property (weak, nonatomic) IBOutlet UILabel *legendLabel;
 
 @end
 

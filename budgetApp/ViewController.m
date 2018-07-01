@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "ConfigureBudgetViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "Chameleon.h"
 
 
 
@@ -16,7 +17,13 @@
 
 
 - (void)viewDidLoad {
-[super viewDidLoad];
+    [super viewDidLoad];
+    self.view.backgroundColor = [UIColor colorWithGradientStyle:UIGradientStyleTopToBottom withFrame:self.view.bounds andColors:@[[UIColor flatBlackColor], [UIColor flatGrayColor]]];
+    self.foodLabel.textColor = [UIColor flatPurpleColor];
+    self.utilityLabel.textColor = [UIColor flatBlueColor];
+    self.entertainmentLabel.textColor = [UIColor flatPowderBlueColor];
+    self.transportationLabel.textColor = [UIColor flatBlueColorDark];
+    self.miscellaneousLabel.textColor = [UIColor flatSkyBlueColor];
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -92,7 +99,7 @@
 -(void)setupPie{
     self.slices = [[NSArray alloc]initWithObjects:@([self.dataHelper sectionExpenseTotal:@"Food"]), @([self.dataHelper sectionExpenseTotal:@"Entertainment"]), @([self.dataHelper sectionExpenseTotal:@"Utility"]), @([self.dataHelper sectionExpenseTotal:@"Transportation"]), @([self.dataHelper sectionExpenseTotal:@"Miscellaneous"]),nil];
 
-    self.sliceColors = [[NSArray alloc]initWithObjects:UIColor.redColor, UIColor.blueColor, UIColor.greenColor, UIColor.yellowColor, UIColor.purpleColor, nil];
+    self.sliceColors = [[NSArray alloc]initWithObjects:UIColor.flatPurpleColor, UIColor.flatBlueColor, UIColor.flatPowderBlueColor, UIColor.flatBlueColorDark, UIColor.flatSkyBlueColor, nil];
     
     self.sliceLabelTitles = @[@"Food",@"Entertainment", @"Utility", @"Transportation", @"Miscellaneous"];
     
