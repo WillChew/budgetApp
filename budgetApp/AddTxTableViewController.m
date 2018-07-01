@@ -8,6 +8,7 @@
 
 #import "AddTxTableViewController.h"
 #import "Expense.h"
+#import "Chameleon.h"
 
 @interface AddTxTableViewController () <UIPickerViewDelegate, UIPickerViewDataSource>
 
@@ -26,6 +27,7 @@
     
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor colorWithGradientStyle:UIGradientStyleTopToBottom withFrame:self.view.bounds andColors:@[[UIColor flatGrayColor], [UIColor flatBlackColor]]];
     [self setupKeyboards];
     
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(viewTapped:)];

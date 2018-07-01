@@ -11,6 +11,7 @@
 #import "TransactionTableViewCell.h"
 #import "AddTxTableViewController.h"
 #import "Section.h"
+#import "Chameleon.h"
 
 @interface TransactionViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -86,6 +87,10 @@
     TransactionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TransactionCell" forIndexPath:indexPath];
     Section *section = self.sections[indexPath.section];
     Expense *expense = section.expenses[indexPath.row];
+    if (indexPath.row % 2) {
+        [cell setBackgroundColor:[UIColor colorWithRed:.9 green:.9 blue:.9 alpha:1]];
+    }
+    else [cell setBackgroundColor:[UIColor clearColor]];
     [cell configureCellWithExpense:expense];
     return cell;
 }

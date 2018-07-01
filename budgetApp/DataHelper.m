@@ -31,7 +31,7 @@
     if (self) {
         self.realm = [RLMRealm defaultRealm];
         self.sections = (RLMArray <Section*>*)[self createSectionObjects];
-        [self createTestObjects];
+//        [self createTestObjects];
     }
     return self;
 }
@@ -39,26 +39,26 @@
 - (void)createTestObjects {
     
     Section *food = self.sections[0];
-    Expense *expense1 = [[Expense alloc] initWithName:@"Ice cream" amount:[[NSDecimalNumber alloc]initWithInt:10] description:@"Campo on King" date:[NSDate date]];
-    Expense *expense2 = [[Expense alloc] initWithName:@"Fruit" amount:[[NSDecimalNumber alloc]initWithInt:20] description:@"Fresh and Wild" date:[NSDate date]];
+    Expense *expense1 = [[Expense alloc] initWithName:@"Churro ice cream" amount:[[NSDecimalNumber alloc]initWithInt:6] description:@"Campo on King" date:[NSDate date]];
+    Expense *expense2 = [[Expense alloc] initWithName:@"Groceries" amount:[[NSDecimalNumber alloc]initWithInt:104] description:@"Fresh and Wild" date:[NSDate date]];
     
     Section *entertainment = self.sections[1];
-    Expense *expense3 = [[Expense alloc] initWithName:@"Movie night" amount:[[NSDecimalNumber alloc]initWithInt:30] description:@"Went to see Deadpool 2" date:[NSDate date]];
-    Expense *expense4 = [[Expense alloc] initWithName:@"Bar hopping with friends" amount:[[NSDecimalNumber alloc]initWithInt:10] description:@"Drinks are on me" date:[NSDate date]];
+    Expense *expense3 = [[Expense alloc] initWithName:@"Movie night" amount:[[NSDecimalNumber alloc]initWithInt:27] description:@"Deadpool 2" date:[NSDate date]];
+    Expense *expense4 = [[Expense alloc] initWithName:@"Bar hopping with friends" amount:[[NSDecimalNumber alloc]initWithInt:64] description:@"King West" date:[NSDate date]];
     
     Section *utility = self.sections[2];
-    Expense *expense5 = [[Expense alloc] initWithName:@"Internet bill" amount:[[NSDecimalNumber alloc]initWithInt:40] description:@"High speed fibre optic" date:[NSDate date]];
-    Expense *expense6 = [[Expense alloc] initWithName:@"Hydro bill" amount:[[NSDecimalNumber alloc]initWithInt:10] description:@"For the current month" date:[NSDate date]];
+    Expense *expense5 = [[Expense alloc] initWithName:@"Internet bill" amount:[[NSDecimalNumber alloc]initWithInt:80] description:@"Bell fibre optic" date:[NSDate date]];
+    Expense *expense6 = [[Expense alloc] initWithName:@"Hydro bill" amount:[[NSDecimalNumber alloc]initWithInt:125] description:@"June" date:[NSDate date]];
     
     
     Section *transportation = self.sections[3];
-    Expense *expense7 = [[Expense alloc] initWithName:@"TTC" amount:[[NSDecimalNumber alloc]initWithInt:10] description:@"Monthly pass" date:[NSDate date]];
-    Expense *expense8 = [[Expense alloc] initWithName:@"Uber ride" amount:[[NSDecimalNumber alloc]initWithInt:20] description:@"For the trip downtown" date:[NSDate date]];
+    Expense *expense7 = [[Expense alloc] initWithName:@"TTC Metropass" amount:[[NSDecimalNumber alloc]initWithInt:146] description:@"Monthly pass" date:[NSDate date]];
+    Expense *expense8 = [[Expense alloc] initWithName:@"Uber ride" amount:[[NSDecimalNumber alloc]initWithInt:23] description:@"Heading across town" date:[NSDate date]];
     
     
     Section *miscellaneous = self.sections[4];
-    Expense *expense9 = [[Expense alloc] initWithName:@"Indoor skydiving" amount:[[NSDecimalNumber alloc]initWithInt:10] description:@"iFly Toronto" date:[NSDate date]];
-    Expense *expense10 = [[Expense alloc] initWithName:@"New computer desk purchase" amount:[[NSDecimalNumber alloc]initWithInt:10] description:@"IKEA desk" date:[NSDate date]];
+    Expense *expense9 = [[Expense alloc] initWithName:@"Indoor skydiving" amount:[[NSDecimalNumber alloc]initWithInt:145] description:@"iFly Toronto" date:[NSDate date]];
+    Expense *expense10 = [[Expense alloc] initWithName:@"New computer desk" amount:[[NSDecimalNumber alloc]initWithInt:53] description:@"IKEA purchase" date:[NSDate date]];
     
     [self.realm beginWriteTransaction];
     [food.expenses addObjects:@[expense1, expense2]];
