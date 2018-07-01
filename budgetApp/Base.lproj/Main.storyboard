@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Budget Info-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
@@ -25,13 +25,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ik6-qe-Law">
-                                <rect key="frame" x="301" y="657" width="93" height="30"/>
-                                <state key="normal" title="Reset Budget"/>
-                                <connections>
-                                    <action selector="resetButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rmk-im-anK"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rBw-3T-gJL" customClass="XYPieChart">
                                 <rect key="frame" x="60" y="221" width="295" height="294"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -104,16 +97,13 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="rBw-3T-gJL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1qv-TW-Kfe"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ik6-qe-Law" secondAttribute="trailing" constant="20" id="4WI-Ws-DtB"/>
                             <constraint firstItem="rBw-3T-gJL" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="6Ko-Sk-Pon"/>
                             <constraint firstAttribute="trailing" secondItem="TVR-ea-reQ" secondAttribute="trailing" constant="220" id="Bkd-4c-80P"/>
                             <constraint firstItem="C17-pg-Fkh" firstAttribute="top" secondItem="2Bg-Yh-r1K" secondAttribute="bottom" constant="20" id="ISh-zG-Qko"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="C17-pg-Fkh" secondAttribute="trailing" constant="61" id="Mjs-SA-dJA"/>
-                            <constraint firstItem="Ik6-qe-Law" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Pi4-pv-lcs"/>
                             <constraint firstItem="TVR-ea-reQ" firstAttribute="top" secondItem="rBw-3T-gJL" secondAttribute="bottom" constant="1.6666666666666288" id="QLa-jF-PMG"/>
                             <constraint firstItem="rBw-3T-gJL" firstAttribute="top" secondItem="C17-pg-Fkh" secondAttribute="bottom" constant="20" id="UKO-GY-1ZO"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2Bg-Yh-r1K" secondAttribute="trailing" constant="40" id="Yx0-xx-eCk"/>
-                            <constraint firstItem="Ik6-qe-Law" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="aeD-7t-3fg"/>
                             <constraint firstItem="TVR-ea-reQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="d8w-je-Ufq"/>
                             <constraint firstItem="2Bg-Yh-r1K" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="hmd-dr-Fgc"/>
                             <constraint firstItem="TVR-ea-reQ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="20" id="iHi-uQ-eA4"/>
@@ -122,7 +112,17 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="2YK-bT-KC3">
+                    <navigationItem key="navigationItem" title="Budget Info" largeTitleDisplayMode="always" id="2YK-bT-KC3">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="hJq-ge-AGb">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ik6-qe-Law">
+                                <rect key="frame" x="20" y="7" width="93" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="resetButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rmk-im-anK"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Configure" id="p8L-6m-yjh">
                             <connections>
                                 <action selector="configureButtonPressed:" destination="BYZ-38-t0r" id="peK-tv-vMJ"/>
