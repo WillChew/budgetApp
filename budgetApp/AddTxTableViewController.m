@@ -37,6 +37,7 @@
     
     self.submitButton.backgroundColor = UIColor.clearColor;
     self.cancelButton.backgroundColor = UIColor.clearColor;
+    self.view.backgroundColor = UIColor.flatGrayColor;
     
     
 }
