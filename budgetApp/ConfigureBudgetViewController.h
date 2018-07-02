@@ -9,10 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "DataHelper.h"
 
-
-
-
-
 @interface ConfigureBudgetViewController : UIViewController
 
 @property (nonatomic, strong) DataHelper *dataHelper;

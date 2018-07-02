@@ -14,24 +14,14 @@
 @interface DataHelper : NSObject
 
 - (RLMResults<Section*> *)createSectionObjects;
-
 - (void)saveExpense:(Expense *)expense withSection:(NSString *)sectionTitle;
-
 - (RLMArray<Section*>*)fetchAllSections;
-
 - (void)reset;
-
--(float)sectionExpenseTotal:(NSString*)sectionTitle;
-
+- (float)sectionExpenseTotal:(NSString*)sectionTitle;
 - (void)deleteAtIndexPath:(NSInteger)indexPath;
-
-
-
 - (void) saveBudget:(NSString*)amount;
-
 - (float) totalExpenses;
-
 - (NSString*) budgetRemaining;
-- (float) getBudget;
+
 
 @end

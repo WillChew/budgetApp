@@ -11,6 +11,6 @@
 
 @interface TransactionTableViewCell : UITableViewCell
 
--(void)configureCellWithExpense:(Expense *)expense;
+- (void)configureCellWithExpense:(Expense *)expense;
 
 @end

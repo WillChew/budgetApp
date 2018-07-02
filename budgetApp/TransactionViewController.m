@@ -20,14 +20,6 @@
 
 @property (nonatomic) RLMArray<Section*>* sections;
 
-
-
-//@property (nonatomic, strong) Expense *expense;
-
-
-
-
-
 @end
 
 @implementation TransactionViewController
@@ -49,7 +41,7 @@
     // set the sections property to the queried sections from data helper
     self.sections = [self.dataHelper fetchAllSections];
     
-
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -63,14 +55,14 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return self.sections.count;

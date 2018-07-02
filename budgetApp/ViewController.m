@@ -43,15 +43,13 @@
     
     _dataHelper = dataHelper;
 }
-
+#pragma mark - Buttons and Segues
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"ConfigureSegue"]) {
         ConfigureBudgetViewController *cvc = segue.destinationViewController;
         cvc.dataHelper = self.dataHelper;
         self.navigationController.navigationBar.hidden = YES;
-        
-        
     }
 }
 - (IBAction)resetButtonPressed:(id)sender {
@@ -62,7 +60,7 @@
 
 - (IBAction)configureButtonPressed:(id)sender {
     [self.navigationController setNavigationBarHidden:YES animated:YES];
-    }
+}
 
 
 - (IBAction)unwindToMainMenu:(UIStoryboardSegue *)unwindSegue {
@@ -91,18 +89,19 @@
 }
 
 -(UIColor *)pieChart:(XYPieChart *)pieChart colorForSliceAtIndex:(NSUInteger)index {
-  return [self.sliceColors objectAtIndex:(index % self.sliceColors.count)];
+    return [self.sliceColors objectAtIndex:(index % self.sliceColors.count)];
 }
 
 
+#pragma mark - Setting up the Pie
 
 -(void)setupPie{
-    float budgetRemaining = [self.dataHelper budgetRemaining].floatValue/[self.dataHelper getBudget] * 100;
+    
     self.slices = [[NSArray alloc]initWithObjects:@([self.dataHelper sectionExpenseTotal:@"Food"]), @([self.dataHelper sectionExpenseTotal:@"Entertainment"]), @([self.dataHelper sectionExpenseTotal:@"Utility"]), @([self.dataHelper sectionExpenseTotal:@"Transportation"]), @([self.dataHelper sectionExpenseTotal:@"Miscellaneous"]), nil];
-
+    
     self.sliceColors = [[NSArray alloc]initWithObjects:UIColor.flatPurpleColor, UIColor.flatTealColor, UIColor.flatGreenColor, UIColor.flatBlueColor, UIColor.flatSkyBlueColor, UIColor.redColor, nil];
     
-    self.sliceLabelTitles = @[@"Food",@"Entertainment", @"Utility", @"Transportation", @"Miscellaneous"];
+    
     
     self.pieView.delegate = self;
     self.pieView.dataSource = self;

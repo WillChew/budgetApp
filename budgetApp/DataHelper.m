@@ -31,7 +31,7 @@
     if (self) {
         self.realm = [RLMRealm defaultRealm];
         self.sections = (RLMArray <Section*>*)[self createSectionObjects];
-//        [self createTestObjects];
+        //        [self createTestObjects];
     }
     return self;
 }
@@ -116,12 +116,12 @@
 //
 
 - (float) totalExpenses {
-//    NSNumber *sum = [numbers valueForKeyPath:@"@sum.number"];
-//    NSPredicate *pred = [NSPredicate predicateWithFormat:@"@sum.amount"];
+    //    NSNumber *sum = [numbers valueForKeyPath:@"@sum.number"];
+    //    NSPredicate *pred = [NSPredicate predicateWithFormat:@"@sum.amount"];
     RLMResults <Expense*>*expenses = [Expense allObjects];
-    NSNumber *num = [expenses sumOfProperty:@"amount"];
-    float num2 = [num floatValue];
-    return num2;
+    NSNumber *expenseNumber = [expenses sumOfProperty:@"amount"];
+    float totalExpenses = [expenseNumber floatValue];
+    return totalExpenses;
 }
 
 

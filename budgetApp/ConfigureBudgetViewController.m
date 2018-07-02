@@ -24,7 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupKeyboard];
-
+    
     // Do any additional setup after loading the view.
     self.submitButton.backgroundColor = UIColor.clearColor;
     self.containerView.layer.cornerRadius = 25;
@@ -41,8 +41,6 @@
     [vc.pieView reloadData];
     
 }
-
-
 
 -(void)setupKeyboard {
     self.configureBudgetTextField.keyboardType = UIKeyboardTypeDecimalPad;
