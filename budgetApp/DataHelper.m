@@ -31,7 +31,7 @@
     if (self) {
         self.realm = [RLMRealm defaultRealm];
         self.sections = (RLMArray <Section*>*)[self createSectionObjects];
-//        [self createTestObjects];
+        [self createTestObjects];
     }
     return self;
 }
@@ -41,6 +41,8 @@
     Section *food = self.sections[0];
     Expense *expense1 = [[Expense alloc] initWithName:@"Churro ice cream" amount:[[NSDecimalNumber alloc]initWithInt:6] description:@"Campo on King" date:[NSDate date]];
     Expense *expense2 = [[Expense alloc] initWithName:@"Groceries" amount:[[NSDecimalNumber alloc]initWithInt:104] description:@"Fresh and Wild" date:[NSDate date]];
+
+    
     
     Section *entertainment = self.sections[1];
     Expense *expense3 = [[Expense alloc] initWithName:@"Movie night" amount:[[NSDecimalNumber alloc]initWithInt:27] description:@"Deadpool 2" date:[NSDate date]];
