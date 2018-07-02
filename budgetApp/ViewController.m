@@ -97,11 +97,12 @@
 
 
 -(void)setupPie{
-    self.slices = [[NSArray alloc]initWithObjects:@([self.dataHelper sectionExpenseTotal:@"Food"]), @([self.dataHelper sectionExpenseTotal:@"Entertainment"]), @([self.dataHelper sectionExpenseTotal:@"Utility"]), @([self.dataHelper sectionExpenseTotal:@"Transportation"]), @([self.dataHelper sectionExpenseTotal:@"Miscellaneous"]),nil];
+    float budgetRemaining = [self.dataHelper budgetRemaining].floatValue/[self.dataHelper getBudget] * 100;
+    self.slices = [[NSArray alloc]initWithObjects:@([self.dataHelper sectionExpenseTotal:@"Food"]), @([self.dataHelper sectionExpenseTotal:@"Entertainment"]), @([self.dataHelper sectionExpenseTotal:@"Utility"]), @([self.dataHelper sectionExpenseTotal:@"Transportation"]), @([self.dataHelper sectionExpenseTotal:@"Miscellaneous"]), @(budgetRemaining), nil];
 
-    self.sliceColors = [[NSArray alloc]initWithObjects:UIColor.flatPurpleColor, UIColor.flatTealColor, UIColor.flatGreenColor, UIColor.flatBlueColor, UIColor.flatSkyBlueColor, nil];
+    self.sliceColors = [[NSArray alloc]initWithObjects:UIColor.flatPurpleColor, UIColor.flatTealColor, UIColor.flatGreenColor, UIColor.flatBlueColor, UIColor.flatSkyBlueColor, UIColor.redColor, nil];
     
-    self.sliceLabelTitles = @[@"Food",@"Entertainment", @"Utility", @"Transportation", @"Miscellaneous"];
+    self.sliceLabelTitles = @[@"Food",@"Entertainment", @"Utility", @"Transportation", @"Miscellaneous", @"Remaining"];
     
     self.pieView.delegate = self;
     self.pieView.dataSource = self;
